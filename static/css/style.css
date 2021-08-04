@@ -85,7 +85,7 @@ a h2:hover{
   -webkit-transition:.3s;
 }
 
-#delete-modal h5 {
+.modal-header h5 {
   font-family: antique-olive-nord, sans-serif;
 }
 

@@ -9,10 +9,6 @@
             <div class="col-lg-12 text-center">
                 <h4>{{ username }}'s Profile</h4>
             </div>
-            <!-- Add new post -->
-            <div class="text-center">
-                <a href="{{ url_for('add_post') }}">Add New Post</a>
-            </div>
         </div>
         <!-- User Posts -->
         <div class="row">
@@ -26,10 +22,15 @@
                         </div>
                     </div>
                 </div>
+                {% else %} 
+                <div class="text-center">
+                    <p class="question">You dont have any posts yet, Would you like to add one?</p>
+                    <a href="{{ url_for('add_post') }}" class="form-submit" >Add a new post</a>
+                </div>
             {% endfor %}  
         </div>
         <!-- Delete user account model trigger-->
-        <div class="text-center">
+        <div class="text-center" style="margin-top: 4rem; margin-bottom: 1rem;">
             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete Your Account</button>
         </div>
         <!-- Modal -->

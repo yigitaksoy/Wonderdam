@@ -442,6 +442,10 @@ transition: color .9s ease;
   margin-top: 2rem;
 }
 
+#profile h4 {
+  font-family: antique-olive-nord, sans-serif;
+}
+
 #profile .form-submit:hover {
   border: 1px var(--hover) solid;
 }

@@ -85,6 +85,10 @@ a h2:hover{
   -webkit-transition:.3s;
 }
 
+#delete-modal h5 {
+  font-family: antique-olive-nord, sans-serif;
+}
+
 @media (max-width: 768px) {
   .post h2  {
     font-size: 2.6rem;

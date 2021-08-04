@@ -39,7 +39,7 @@
                            <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
-                           <p style="white-space: pre-wrap;">{{ post.post_content }}</p>
+                           <p class="text-clamp" style="white-space: pre-wrap;">{{ post.post_content }}</p>
                            <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
                         </div>
                      </div>
@@ -73,7 +73,7 @@
                            <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
-                           <p style="white-space: pre-wrap;">{{ post.post_content }}</p>
+                           <p class="text-clamp"style="white-space: pre-wrap;">{{ post.post_content }}</p>
                            <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
                         </div>
                      </div>

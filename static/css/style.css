@@ -251,6 +251,13 @@ a h2:hover{
   letter-spacing: 2px;
 }
 
+.text-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
 @media (max-width: 768px) {
   .post {
     margin-bottom: 0;  

@@ -442,6 +442,18 @@ transition: color .9s ease;
   margin-top: 2rem;
 }
 
+#profile .form-submit:hover {
+  border: 1px var(--hover) solid;
+}
+
+.question {
+  font-family: antique-olive-nord, sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 3rem!important; 
+  margin-top: 3rem!important; 
+  font-size: 1.25rem!important;
+}
+
 .card-img-top {
   width: 100%;
   height: 15vw;

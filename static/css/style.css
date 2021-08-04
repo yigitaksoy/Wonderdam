@@ -311,7 +311,8 @@ a h2:hover{
 }
 
 .edit-category,
-.add-category {
+.add-category,
+.message-content {
   padding: 10px 100px;
 }
 

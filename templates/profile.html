@@ -9,6 +9,9 @@
         <!-- User Posts -->
         <div class="row">
             <h4 class="text-center title" style="margin:1rem 0!important">Your Recent Posts</h4>
+            <div class="text-center" style="margin:2rem 0!important">
+                <a href="{{ url_for('add_post') }}" class="form-submit" >Add a new post</a>
+            </div>
             {% for post in posts %}
                 <div class="col-lg-3 col-md-6 col-sm-3 d-flex justify-content-center align-items-stretch">
                     <div class="card" style="width: 18rem;">
@@ -22,7 +25,6 @@
                 {% else %} 
                 <div class="text-center">
                     <p class="question">You dont have any posts yet, Would you like to add one?</p>
-                    <a href="{{ url_for('add_post') }}" class="form-submit" >Add a new post</a>
                 </div>
             {% endfor %}
         </div>

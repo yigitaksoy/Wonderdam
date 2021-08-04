@@ -35,7 +35,7 @@ body {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.8;
 }
 
@@ -219,7 +219,7 @@ a h2:hover{
 }
 
 .post h2 {
-  font-size: 4rem;
+  font-size: 4.5rem;
 }
 
 .post h2:hover {
@@ -256,6 +256,12 @@ a h2:hover{
   -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .post h2 {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width: 768px) {

@@ -446,6 +446,10 @@ transition: color .9s ease;
   font-family: antique-olive-nord, sans-serif;
 }
 
+.title {
+  color: var(--hover);
+}
+
 #profile .form-submit:hover {
   border: 1px var(--hover) solid;
 }

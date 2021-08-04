@@ -442,6 +442,19 @@ transition: color .9s ease;
   margin-top: 2rem;
 }
 
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 768px) {
+  .card-img-top {
+    height: 25vh;
+  }
+}
+
+
 /* Admin Dashboard */
 
 #dashboard {

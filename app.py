@@ -150,11 +150,15 @@ def profile(username):
         # Grab the session user's username from db
         username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+        
+        posts = list(mongo.db.posts.find(
+            {"author": session["user"]}).sort("post_date", 1))
+      
     else:
         flash('You are not authorized to perform this operation')
         return redirect(url_for("homepage"))   
         # Return profile page with user's unique name   
-    return render_template("profile.html", username=username)
+    return render_template("profile.html", username=username, posts=posts)
 
 
 # -- Delete Account --- #

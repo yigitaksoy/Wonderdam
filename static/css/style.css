@@ -292,7 +292,8 @@ a h2:hover{
 .login,
 .register,
 .add-post,
-.edit-post {
+.edit-post,
+.contact {
   margin-top: 2rem;
   margin-bottom: 2rem;
   height: 50px;

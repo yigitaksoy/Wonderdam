@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section id="blog-home">
+   <!-- Blog Title -->
+   <h2 class="text-center jumbotron">Your Local Guide for the greatest city in Europe</h2>
+   {% if posts|length > 0 %}
+      <!-- Blog Posts -->
+         {% for post in posts %}
+            <div class="container">
+               <div class="row">
+                  {% if loop.index % 2 != 0 %}
+                     <div class="post col-lg-7 col-md-7">
+                        <div class="post-img wow animate__animated animate__fadeIn">
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}">
+                              <img class="img-fluid" style="width: 100%; height: 100%; object-fit:cover;" src="{{ post.post_image }}" alt="{{ post.post_title }}">
+                           </a>
+                        </div>
+                     </div>
+                     <div class="post col-lg-5 col-md-5">
+                        <div class="content post-right py-5 wow animate__animated animate__fadeInUp" >
+                          
+                           {% if session.user|lower == post.author|lower or session.user == 'admin' %}
+                           <!-- Blog Info tags -->
+                           <p class="info">
+                               <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                               <span>{{post.post_date}}</span> 
+                               <span><a href="{{ url_for('edit_post', post_id=post._id) }}"><i class="fa fa-edit"></i></a></span>
+                               <span><a href="{{ url_for('delete_post', post_id=post._id) }}"><i class="fa fa-trash"></i></a></span>
+                           </p>
+                           <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
+                           {% else %}
+                           <!-- Blog Info tags -->
+                           <p class="info">
+                              <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                              <span>{{post.post_date}}</span>
+                           </p>
+                           <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
+                           {% endif %}
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
+                           <p style="white-space: pre-wrap;">{{ post.post_content }}</p>
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
+                        </div>
+                     </div>
+                     {% else %}
+                     <!-- Blog Posts -->
+                     <div class="post col-lg-7 col-md-7 order-md-last">
+                        <div class="post-img wow animate__animated animate__fadeIn order-md-last">
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}">
+                              <img class="img-fluid" style="width: 100%; height: 100%; object-fit:cover;" src="{{ post.post_image }}" alt="{{ post.post_title }}">
+                           </a>
+                       </div>
+                     </div>
+                     <div class="col-lg-5 col-md-5 post">
+                        <div class="content post-right py-5 wow animate__animated animate__fadeInUp" >
+                          
+                           {% if session.user|lower == post.author|lower or session.user == 'admin' %}
+                           <!-- Blog Info tags -->
+                           <p class="info">
+                               <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                               <span>{{post.post_date}}</span> 
+                               <span><a href="{{ url_for('edit_post', post_id=post._id) }}"><i class="fa fa-edit"></i></a></span>
+                               <span><a href="{{ url_for('delete_post', post_id=post._id) }}"><i class="fa fa-trash"></i></a></span>
+                           </p>
+                           <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
+                           {% else %}
+                           <!-- Blog Info tags -->
+                           <p class="info">
+                              <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                              <span>{{post.post_date}}</span>
+                           </p>
+                           <h4 class="post-tag"><span class="badge bg-secondary">{{ post.post_category }}</span></h4>
+                           {% endif %}
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
+                           <p style="white-space: pre-wrap;">{{ post.post_content }}</p>
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
+                        </div>
+                     </div>
+                  {% endif %}
+               </div>
+            </div>
+         {% endfor %}
+   {% else %}
+   <h3 class="text-center">No Results Found</h3>
+   {% endif %}
+</section>
+<!-- Footer -->
+<footer>
+   <div class="container-fluid">
+       <div class="row text-center">
+           <div class="col-sm-10 col-md-12 col-lg-12">
+               <p>© 2021 <span>Wonderdam</span>. All rights reserved. </p>
+               <p>Made with ♥️ by <a href="https://github.com/yigitaksoy" target="_blank" rel="noreferrer noopener">Yigit Aksoy</a></p>     
+           </div>
+       </div>
+   </div>
+</footer>
+
+{% endblock %}

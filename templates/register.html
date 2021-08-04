@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- User Register Form -->
+<section class="signup">
+    <h2 class="form-title text-center">Create Account</h2>
+    <div class="container">
+        <div class="form-content justify-content-center">
+            <form  id="user-form" class="register-form" method="POST" action="{{ url_for('register') }}">  
+                <div class="form-group">
+                    <input type="text" class="form-input" name="name" id="name" placeholder="Name" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" name="last_name" id="last_name" placeholder="Last Name" required/>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-input" name="email" id="email" placeholder="E-mail" required/>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-input" name="username" id="username" placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" required/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" name="password" id="password" placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9!£%~#$%&()*+,-./?@^_~]{5,15}$" required/>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-input" id="confirm_password" name="confirm_password" placeholder="Confirm Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9!£%~#$%&()*+,-./?@^_~]{5,15}$" required/>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" name="submit" id="submit" class="form-submit" value="Register"/>
+                </div>
+            </form>
+            <p class="redirect">
+                Have already an account ? <a href="{{ url_for('login') }}" class="redirect-link">Login here</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

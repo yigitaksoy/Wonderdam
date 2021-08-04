@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Add Post Form -->
+<section class="add-post">
+    <h2 class="form-title text-center">New Post</h2>
+    <div class="container">
+        <div class="post-content form-content">
+            <form  id="user-form" class="add-post-form" method="POST" action="{{ url_for('add_post') }}">
+                <div class="form-group">
+                    <label for="Post Title">Post Title</label>
+                    <input type="text" class="form-input" name="post_title" id="post_title" required/>
+                </div>
+                <div class="form-group">
+                    <label for="Post Content">Post Content</label>
+                    <textarea class="form-control post_content" id="post_content" name="post_content" 
+                        rows="5" cols="80" minlength="300" maxlength="1500" required></textarea>
+                        <small id="min-count" class="form-text text-muted ms-auto">Minimum 300 words are required</small>
+                </div>
+                <div class="form-group">
+                    <label for="Post Title">Image URL</label>
+                    <input type="url" class="form-input" name="post_image" id="post_image" required/>
+                </div>
+                <div class="form-group text-center">
+                    <label for="sel1">Category</label>
+                    <select class="form-input dropdown-item" id="post_category" name="post_category" required>
+                            <option selected value="">Please choose a category</option>
+                        {% for category in categories %}
+                            <option value="{{ category.post_category }}">{{ category.post_category }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group text-center">
+                    <input type="submit" name="submit" id="submit" class="form-submit" value="Submit"/>
+                </div>
+            </form>
+            <p class="redirect">
+                Changed your mind ? That's ok! <a href="{{ url_for('homepage') }}" class="redirect-link">Go back to the homepage</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+
+
+
+{% endblock %}

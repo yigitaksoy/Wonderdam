@@ -50,8 +50,8 @@ def admin_user():
 @app.route("/homepage")
 def homepage():
 
-    posts = list(mongo.db.posts.find())
-
+    posts = list(mongo.db.posts.find().sort("post_date", 1))
+    
     return render_template(
         "index.html", posts=posts)
 

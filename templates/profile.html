@@ -13,29 +13,44 @@
             <div class="text-center">
                 <a href="{{ url_for('add_post') }}">Add New Post</a>
             </div>
-            <!-- Delete user account model trigger-->
-            <div class="text-center">
-                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete Your Account</button>
-            </div>
-            <!-- Modal -->
-            <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="delete-modal" style="color: black;">Delete Category</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <p style="color: black;">Are you sure you want to delete your account?</p>
-                        </div>
-                        <div class="modal-footer" id="delete-modal">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <a href="{{ url_for('delete_account', username=username) }}" class="btn btn-danger">Delete</a>
+        </div>
+        <!-- User Posts -->
+        <div class="row">
+            {% for post in posts %}
+                <div class="col-lg-3 col-md-6 col-sm-3 d-flex justify-content-center align-items-stretch">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{post.post_image}}" class="card-img-top" alt="{{ post.post_title }}">
+                        <div class="card-body text-center">
+                          <h5 class="card-title">{{ post.post_title }}</h5>
+                          <a href="{{ url_for('blog_post', post_id=post._id) }}" class="btn btn-primary">Go to post</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            {% endfor %}  
         </div>
+        <!-- Delete user account model trigger-->
+        <div class="text-center">
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete Your Account</button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="delete-modal" style="color: black;">Delete Category</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p style="color: black;">Are you sure you want to delete your account?</p>
+                    </div>
+                    <div class="modal-footer" id="delete-modal">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a href="{{ url_for('delete_account', username=username) }}" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
 </section>
 
 {% endblock %}

@@ -312,6 +312,10 @@ a h2:hover{
   .post h2 {
     font-size: 3.2rem;
   }
+
+  .post-img {
+    height: 800px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -326,6 +330,9 @@ a h2:hover{
   .post-right {
     padding-left: 0!important;
     padding-right: .5rem!important;
+  }
+  .post-img {
+    height: 700px;
   }
 }
   

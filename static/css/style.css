@@ -227,7 +227,7 @@ a h2:hover{
 }
 
 .post .content {
-  margin-top: 2rem!important;
+  margin-top: 3rem!important;
 }
 
 .post .info {
@@ -287,8 +287,9 @@ a h2:hover{
     }
 
     .post .content {
-      margin-top: 1.5rem!important;
-      padding-left: 0!important;
+      margin-top: 0!important;
+      margin-bottom: 3rem!important;
+      padding-top: 0!important;
     }
 
     .post-img {

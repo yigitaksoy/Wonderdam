@@ -225,6 +225,11 @@ def add_post():
 
     if session.get("user"):
         if request.method == "POST":
+            # Check if post already exists in db
+            existing_post = mongo.db.posts.find_one(
+            {"post_title": request.form.get("post_title")}
+            )
+
             post = {
                 "post_title": request.form.get("post_title"),
                 "post_category": request.form.get("post_category"),
@@ -233,6 +238,10 @@ def add_post():
                 "post_date": datetime.today().strftime("%d %B, %Y"),
                 "author": session["user"]
             }
+
+            if existing_post:
+                flash("Post already exists")
+                return render_template("add_post.html")
             mongo.db.posts.insert_one(post)
             flash("You've successfully posted!")
             return redirect(url_for("homepage"))

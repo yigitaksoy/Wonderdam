@@ -214,6 +214,7 @@ The process of cloning is now completed. For further information on cloning,
 
 ### Codes
 
+ - Code for line-clamp was taken from [CSS Tricks](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 
 ## Acknowledgements

@@ -4,6 +4,7 @@ from flask import (
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
+from flask_paginate import Pagination, get_page_args
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -39,6 +40,30 @@ mail =Mail(app)
 mongo = PyMongo(app)
 
 
+# -- Set Pagination for posts per page -- #
+POSTS_PER_PAGE = 5
+
+
+# -- Paginate Posts -- #
+def paginate_posts(posts, per_page):
+    page = int(request.args.get('page', 1))
+    offset = (page - 1) * per_page
+    return posts[offset: offset + per_page]
+
+
+# -- Paginate Search Results -- #
+def paginate_search(posts, per_page):
+    page = int(request.args.get('page', 1))
+    offset = (page - 1) * per_page
+    return posts[offset: offset + per_page]
+
+
+def paginate_args(posts, per_page):
+    page = int(request.args.get('page', 1))
+    total=len(posts)
+    return Pagination(page=page, per_page=per_page, total=total)
+
+
 # -- Admin User --- #
 def admin_user():
 
@@ -51,9 +76,13 @@ def admin_user():
 def homepage():
 
     posts = list(mongo.db.posts.find().sort("post_date", 1))
-    
+    pagination_posts = paginate_posts(posts, POSTS_PER_PAGE)
+    pagination = paginate_args(posts, POSTS_PER_PAGE)
+    page_num = request.args.get('page', 1, type=int)
+
     return render_template(
-        "index.html", posts=posts)
+        "index.html", posts=pagination_posts, 
+                    pagination=pagination, page_num=page_num)
 
 
 # -- Blog Post -- #
@@ -71,7 +100,12 @@ def search():
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
 
-    return render_template("index.html", posts=posts)
+    total=len(posts)
+    pagination_posts = paginate_posts(posts, POSTS_PER_PAGE)
+    pagination = paginate_args(posts, POSTS_PER_PAGE)
+
+    return render_template("index.html", posts=pagination_posts, 
+                    pagination=pagination, total=total)
 
 
 # -- User Register --- #

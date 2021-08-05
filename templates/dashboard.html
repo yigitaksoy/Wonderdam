@@ -131,6 +131,24 @@
             </div>
             {% endfor %}
         </div>
+        <!-- Show All Posts on the Blog -->
+        <div class="row">
+            <h4 class="text-center title" style="color: #f8f8f8; font-size: 2rem!important;">Recent Posts</h4>
+            {% for post in posts %}
+                <div class="col-lg-3 col-md-6 col-sm-3 d-flex justify-content-center align-items-stretch">
+                    <div class="card" style="width: 18rem;">
+                        <a href="{{ url_for('blog_post', post_id=post._id) }}">
+                            <img src="{{ post.post_image }}" class="card-img-top" alt="{{ post.post_title }}">
+                        </a>
+                        <div class="card-body text-center">
+                            <a href="{{ url_for('blog_post', post_id=post._id) }}">
+                                <h5 class="card-title">{{ post.post_title }}</h5>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
 </section>
 

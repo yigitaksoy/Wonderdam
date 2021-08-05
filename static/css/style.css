@@ -137,11 +137,17 @@ a h2:hover{
   }
 
   .pagination {
-    margin-top: 0!important;
+    margin-top: 1!important;
   }
 
   .pagination-page-info {
     font-size: .8rem;
+  }
+}
+
+@media (max-width: 414px) {
+  .pagination {
+    margin-top: 0!important;
   }
 }
 

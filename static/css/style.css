@@ -487,13 +487,17 @@ transition: color .9s ease;
 /* Blog Post Page */
 
 #blog-post-container h2 {
-  line-height: 1;
-  font-size: 7.8rem!important; 
+  margin: 2rem 0;
+  font-size: 3.5rem; 
 }
 
 .post-tag span {
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.post-content {
+  padding: 1 1.2rem;
 }
 
 @media screen and (max-width: 768px){
@@ -504,6 +508,16 @@ transition: color .9s ease;
 
   #blog-post-container h2{
     font-size: 3rem!important; 
+  }
+
+  .post-content {
+    padding: 1rem 0!important;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  #blog-post-container h2{
+    font-size: 2.5rem!important; 
   }
 }
 

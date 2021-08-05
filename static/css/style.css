@@ -85,6 +85,42 @@ a h2:hover{
   -webkit-transition:.3s;
 }
 
+/*  Pagination */
+
+.pagination {
+  font-family: antique-olive-nord, sans-serif;
+  justify-content: center!important;
+  margin-top: 2rem;
+}
+
+.pagination ul {
+  padding-left: 0;
+}
+
+.pagination ul li {
+  display: inline-block;
+  padding: 1rem;
+}
+
+.pagination li a {
+  font-size: 1.25rem;
+}
+
+.pagination-page-info {
+  justify-content: center!important;
+  margin-right: 0!important;
+  font-size: 1.25rem;
+}
+
+.pagination-page-info b {
+  font-size: 1.25rem;
+}
+
+.pagination li.active {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
 .modal-header h5 {
   font-family: antique-olive-nord, sans-serif;
 }
@@ -98,6 +134,14 @@ a h2:hover{
     font-size: 1.9rem!important;
     margin-top: 2rem!important;
     margin-bottom: 3rem!important;
+  }
+
+  .pagination {
+    margin-top: 0!important;
+  }
+
+  .pagination-page-info {
+    font-size: .8rem;
   }
 }
 

@@ -121,7 +121,9 @@ a h2:hover{
   color: var(--bg-color);
 }
 
-.modal-header h5 {
+.modal-header h5,
+.card-body h5,
+.card-title {
   font-family: antique-olive-nord, sans-serif;
 }
 

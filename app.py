@@ -401,6 +401,20 @@ def delete_user(user_id):
     return redirect(url_for("dashboard"))
 
 
+# -- Delete User Post --- #
+@app.route("/delete_user_post/<post_id>")
+def delete_user_post(post_id):
+
+    if admin_user():
+        mongo.db.posts.remove({"_id": ObjectId(post_id)})
+        flash("Post Successfully Deleted")
+    else:
+        flash('You are not authorized to perform this operation')
+        return redirect(url_for("homepage"))
+
+    return redirect(url_for("dashboard"))
+
+
 # -- Contact --- #
 @app.route("/contact", methods=["GET", "POST"])
 def contact():

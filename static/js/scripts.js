@@ -1,8 +1,3 @@
-// Initialize Rellax JS and Center items
-var rellax = new Rellax(
-    '.rellax', {center: true}
-    );
-
 // Initialize WOW js
 wow = new WOW(
   {

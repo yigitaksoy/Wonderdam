@@ -8,6 +8,7 @@
         <div class="form-content add-category">
             <form  id="user-form" class="add-category" method="POST" action="{{ url_for('add_category') }}">  
                 <div class="form-group">
+                    <label for="post_category">Category Name</label>
                     <input type="text" class="form-input" name="post_category" id="post_category" 
                         placeholder="Category Name" minlength="5" maxlength="15" pattern="^[a-zA-Z]{5,15}$" required/>
                 </div>

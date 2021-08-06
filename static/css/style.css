@@ -496,7 +496,7 @@ transition: color .9s ease;
   text-transform: uppercase;
 }
 
-.post-content {
+.post-page-content {
   padding: 1 1.2rem;
 }
 
@@ -510,7 +510,7 @@ transition: color .9s ease;
     font-size: 3rem!important; 
   }
 
-  .post-content {
+  .post-page-content {
     padding: 1rem 0!important;
   }
 }

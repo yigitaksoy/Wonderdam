@@ -3,7 +3,7 @@
 
 <!-- Admin Dashboard -->
 <section class="container" id="dashboard">
-    <h4 class="text-center" style="color: #f8f8f8; font-size: 2rem!important;">Admin Dashboard</h4>
+    <h4 class="text-center" style="font-size: 2rem!important;">Admin Dashboard</h4>
     <!-- Blog Info Cards -->
     <div class="row">
         <div class="col-md-4 col-xl-3 text-center">
@@ -69,7 +69,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="delete-modal-{{ user._id }}" style="color: black;">Delete Category</h5>
+                                                    <h5 class="modal-title" style="color: black;" id="delete-modal-{{ user._id }}">Delete User</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <div class="modal-body">
@@ -92,10 +92,10 @@
         </div>
         <!-- Blog Categories -->
         <div class="row">
-            <h4 class="text-center" style="color: #f8f8f8; font-size: 2rem!important;">Categories</h4>
+            <h4 class="text-center" style="font-size: 2rem!important;">Categories</h4>
             <!-- Add Category -->
             <div class="text-center">
-                <a class="text-center" style="color: #f8f8f8; font-size: 1.5rem!important;" href="{{ url_for('add_category') }}">Add Category</a>
+                <a class="text-center" style="font-size: 1.5rem!important;" href="{{ url_for('add_category') }}">Add Category</a>
             </div>
             {% for category in categories %}
             <div class="col-md-4 col-xl-3">
@@ -103,7 +103,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body text-center">
                             <!-- Categories-->
-                            <h3 class="card-title h4" style="color: #f8f8f8">{{ category.post_category }}</h3>
+                            <h3 class="card-title h4">{{ category.post_category }}</h3>
                             <a href="{{ url_for('edit_category', category_id=category._id) }}" class="btn btn-secondary">Edit</a>
                             <!-- Button trigger for delete category modal -->
                             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ category._id }}">Delete</button> 
@@ -112,7 +112,7 @@
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="delete-modal-{{ category._id }}" style="color: black;">Delete Category</h5>
+                                            <h5 class="modal-title" style="color: black;" id="delete-modal-{{ category._id }}">Delete Category</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -133,7 +133,7 @@
         </div>
         <!-- Show All Posts on the Blog -->
         <div class="row">
-            <h4 class="text-center title" style="color: #f8f8f8; font-size: 2rem!important;">Recent Posts</h4>
+            <h4 class="text-center title" style="font-size: 2rem!important;">Recent Posts</h4>
             {% for post in posts %}
                 <div class="col-lg-3 col-md-6 col-sm-3 d-flex justify-content-center align-items-stretch">
                     <div class="card" style="width: 18rem;">

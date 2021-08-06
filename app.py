@@ -288,11 +288,26 @@ def add_post():
 def edit_post(post_id):
 
     if request.method == "POST":
+
+        app.logger.info('in upload route')
+        cloudinary.config(
+                cloud_name = os.getenv('CLOUD_NAME'), 
+                api_key=os.getenv('API_KEY'), 
+                api_secret=os.getenv('API_SECRET'))
+        upload_result = None
+        file_to_upload = request.files['post_image']
+        app.logger.info('%s file_to_upload', file_to_upload)
+
+        if file_to_upload:
+            upload_result = cloudinary.uploader.upload(file_to_upload)
+            app.logger.info(upload_result)
+
+
         submit = {
             "post_title": request.form.get("post_title"),
             "post_category": request.form.get("post_category"),
             "post_content": request.form.get("post_content"),
-            "post_image": request.form.get("post_image"),
+            "post_image": upload_result["url"],
             "post_date": datetime.today().strftime("%d %B, %Y"),
             "author": session["user"].title()
         }

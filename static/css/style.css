@@ -639,21 +639,28 @@ footer p span {
 
 /* Error Handlers */
 
+#not-found {
+  margin-top: 4rem;
+}
+
 #not-found-404,
 #not-found-500 {
-  margin-top: 4rem;
   justify-content: center;
   text-transform: uppercase;
   font-weight: 900;
 }
 
-.error-text {
+.error-text, .error {
   font-family: antique-olive-nord, sans-serif;
 }
 
 .error {
   font-size: 10rem!important;
   color: var(--error);
+}
+
+#not-found .form-submit:hover {
+  border: 1px var(--hover) solid;
 }
 
 @media screen and (max-width: 768px) {

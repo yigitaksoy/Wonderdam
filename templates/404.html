@@ -3,14 +3,17 @@
 
 <!-- Error 404 -->
 <section id="not-found">
-	<div id="not-found-404">
+	<h2 class="error-text text-center">Oops! Page not found</h2>
+	<div id="not-found-404" class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 text-center">
-				<h3 class="error-text">Oops! Page not found</h3>
-				<h1 class="error">404</h1>
+				<h3 class="error">404</h3>
+				<h3 class="text-center error-text">we are sorry</h3>
+				<h3 class="text-center error-text">but the page you requested was not found</h3>
 			</div>
-			<h1 class="text-center error-text">we are sorry</h1>
-			<h1 class="text-center error-text">but the page you requested was not found</h1>
+			<div class="text-center" style="margin-top: 2rem!important;">
+				<a href="{{ url_for('homepage') }}" class="form-submit">Go Back</a>
+			</div>
 		</div>
 	</div>
 </section>

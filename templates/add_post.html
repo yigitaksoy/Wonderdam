@@ -6,7 +6,8 @@
     <h2 class="form-title text-center">New Post</h2>
     <div class="container">
         <div class="post-content form-content">
-            <form  id="user-form" class="add-post-form" method="POST" action="{{ url_for('add_post') }}">
+            <form  id="user-form" class="add-post-form" method="POST" 
+                        action="{{ url_for('add_post') }}" enctype="multipart/form-data" >
                 <div class="form-group">
                     <label for="Post Title">Post Title</label>
                     <input type="text" class="form-input" name="post_title" id="post_title" required/>
@@ -18,8 +19,8 @@
                         <small id="min-count" class="form-text text-muted ms-auto">Minimum 300 words are required</small>
                 </div>
                 <div class="form-group">
-                    <label for="Post Title">Image URL</label>
-                    <input type="url" class="form-input" name="post_image" id="post_image" required/>
+                    <label for="post_image">Upload your photo</label>
+                    <input type="file" class="form-control-file" name="post_image" id="post_image" required>
                 </div>
                 <div class="form-group text-center">
                     <label for="sel1">Category</label>

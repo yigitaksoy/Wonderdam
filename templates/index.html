@@ -59,7 +59,7 @@
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
                            <p class="text-clamp" style="white-space: pre-wrap;">{{ post.post_content }}</p>
-                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read Post</a>
                         </div>
                      </div>
                      {% else %}
@@ -112,7 +112,7 @@
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
                            <p class="text-clamp"style="white-space: pre-wrap;">{{ post.post_content }}</p>
-                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read More</a>
+                           <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read Post</a>
                         </div>
                      </div>
                   {% endif %}

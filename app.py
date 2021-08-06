@@ -1,10 +1,15 @@
 import os
+import cloudinary.api
+import cloudinary
+import cloudinary.uploader
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for)
+    redirect, request, session, url_for, jsonify)
 from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
 from flask_paginate import Pagination, get_page_args
+from flask_cors import CORS, cross_origin
+from dotenv import load_dotenv
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
@@ -12,11 +17,23 @@ if os.path.exists("env.py"):
     import env
 
 
+load_dotenv()
+
+
 app = Flask(__name__)
+
+CORS(app)
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
+
+
+# -- Cloudinary Settings -- #
+cloudinary.config(
+    cloud_name = os.getenv('CLOUD_NAME'), 
+    api_key=os.getenv('API_KEY'), 
+    api_secret=os.getenv('API_SECRET'))
 
 
 # -- Flask Mail Settings -- # 
@@ -230,11 +247,24 @@ def add_post():
             {"post_title": request.form.get("post_title")}
             )
 
+            app.logger.info('in upload route')
+            cloudinary.config(
+                cloud_name = os.getenv('CLOUD_NAME'), 
+                api_key=os.getenv('API_KEY'), 
+                api_secret=os.getenv('API_SECRET'))
+            upload_result = None
+            file_to_upload = request.files['post_image']
+            app.logger.info('%s file_to_upload', file_to_upload)
+
+            if file_to_upload:
+                upload_result = cloudinary.uploader.upload(file_to_upload)
+                app.logger.info(upload_result)
+            
             post = {
                 "post_title": request.form.get("post_title"),
                 "post_category": request.form.get("post_category"),
                 "post_content": request.form.get("post_content"),
-                "post_image": request.form.get("post_image"),
+                "post_image": upload_result["url"],
                 "post_date": datetime.today().strftime("%d %B, %Y"),
                 "author": session["user"]
             }

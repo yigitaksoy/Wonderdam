@@ -572,7 +572,7 @@ transition: color .9s ease;
   margin-top: 2rem;
 }
 
-#dashboard h4 {
+#dashboard h4,h3 {
   font-family: antique-olive-nord, sans-serif;
   text-transform: uppercase;
   margin-bottom: 1.5rem;

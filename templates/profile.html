@@ -52,6 +52,11 @@
                 </div>
             {% endfor %}
         </div>
+        {% if session.user|lower == 'admin' %}
+        <div class="text-center" style="margin:2rem 0!important">
+            <a href="{{ url_for('dashboard') }}" class="form-submit" >Go to Dashboard</a>
+        </div>
+        {% else %}
         <!-- Delete user account model trigger-->
         <div class="text-center" style="margin-top: 4rem; margin-bottom: 1rem;">
             <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal">Delete Your Account</button>
@@ -73,7 +78,8 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
+        {% endif %}   
     </div>
 </section>
 

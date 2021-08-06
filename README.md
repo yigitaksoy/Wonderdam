@@ -214,6 +214,7 @@ The process of cloning is now completed. For further information on cloning,
 
 ### Codes
 
+ - Code to fix mixed content issue was taken from [Stackoverflow](https://stackoverflow.com/questions/35178135/how-to-fix-insecure-content-was-loaded-over-https-but-requested-an-insecure-re/35178323)
  - Code for line-clamp was taken from [CSS Tricks](https://css-tricks.com/almanac/properties/l/line-clamp/)
 
 

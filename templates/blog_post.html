@@ -13,9 +13,9 @@
                         <!-- Blog Info tags -->
                         <p class="info wow animate__animated animate__fadeInUp"><span><i class="fa fa-user"></i>{{ post.author }}</span> 
                             <span>{{post.post_date}}</span>
-                            <span><a href="{{ url_for('edit_post', post_id=post._id) }}"><i class="fa fa-edit"></i>Edit </a></span>
+                            <span><a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="edit-post"><i class="fa fa-edit"></i> Edit</a></span>
                             <!-- Delete post modal trigger-->
-                            <span><a href="#delete-modal" role="dialog" data-bs-toggle="modal" data-bs-target="#delete-modal"><i class="fa fa-trash"></i> Delete</a></span>
+                            <span><a href="#delete-modal" role="dialog" data-bs-toggle="modal" data-bs-target="#delete-modal" aria-label="delete-post"><i class="fa fa-trash"></i> Delete</a></span>
                         </p>
                         <!-- Modal -->
                         <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="delete-modal" aria-hidden="true">
@@ -34,8 +34,11 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>    
-                        <h4 class="post-tag"><span class="badge bg-secondary wow animate__animated animate__fadeInUp">{{ post.post_category }}</span></h4>
+                        </div>
+                        
+                        <h3 class="post-tag h5"><span class="badge bg-secondary wow animate__animated animate__fadeInUp">{{ post.post_category }}</span></h3>
+    
+                        
 
                         {% else %}
                         <!-- Blog Info tags -->

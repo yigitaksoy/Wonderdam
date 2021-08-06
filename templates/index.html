@@ -24,11 +24,11 @@
                            {% if session.user|lower == post.author|lower or session.user == 'admin' %}
                            <!-- Blog Info tags -->
                            <p class="info">
-                               <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                               <span><i class="fa fa-user"></i> {{ post.author }}</span> 
                                <span>{{post.post_date}}</span> 
-                               <span><a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="edit-post"><i class="fa fa-edit"></i>Edit</a></span>
+                               <span><a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="edit-post"><i class="fa fa-edit"></i> Edit</a></span>
                               <!-- Delete post modal trigger-->
-                              <span><a href="#delete-modal" role="dialog" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ post._id }}" aria-label="delete-post"><i class="fa fa-trash"></i>Delete</a></span>
+                              <span><a href="#delete-modal" role="dialog" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ post._id }}" aria-label="delete-post"><i class="fa fa-trash"></i> Delete</a></span>
                            </p>
                            <!-- Modal -->
                            <div class="modal fade" id="delete-modal-{{ post._id }}" tabindex="-1" aria-labelledby="delete-modal" aria-hidden="true">
@@ -52,7 +52,7 @@
                            {% else %}
                            <!-- Blog Info tags -->
                            <p class="info">
-                              <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                              <span><i class="fa fa-user"></i> {{ post.author }}</span> 
                               <span>{{post.post_date}}</span>
                            </p>
                            <h3 class="post-tag h5"><span class="badge bg-secondary">{{ post.post_category }}</span></h3>
@@ -77,7 +77,7 @@
                            {% if session.user|lower == post.author|lower or session.user == 'admin' %}
                            <!-- Blog Info tags -->
                            <p class="info">
-                               <span><i class="fa fa-user"></i>{{ post.author }}</span> 
+                               <span><i class="fa fa-user"></i> {{ post.author }}</span> 
                                <span>{{post.post_date}}</span> 
                                <span><a href="{{ url_for('edit_post', post_id=post._id) }}" aria-label="edit-post"><i class="fa fa-edit"></i> Edit</a></span>
                                <!-- Delete post modal trigger-->

@@ -430,6 +430,9 @@ a h2:hover{
 
 #user-form textarea {
   font-size: 14px;
+  padding-left: 0!important;
+  width: 100%;
+  padding: 17px 20px;
   color: var(--bg-color);
   height: 20rem;
   white-space: pre-line!important;

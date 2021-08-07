@@ -198,6 +198,11 @@ a h2:hover{
   padding-right: 1rem;
 }
 
+#nav-menu ul .nav-link:hover{
+  color: var(--hover);
+  font-weight: 800;
+}
+
 #nav-menu .navbar-toggler {
   color: var(--navbar-brand)!important;
 }

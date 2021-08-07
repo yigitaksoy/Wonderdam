@@ -28,3 +28,9 @@ $('#password, #confirm_password').on('keyup', function () {
   } else 
     $('#confirm-input').html('Password Dont Match!').css('color', 'var(--error)');
 });
+
+// Word counter for blog post textarea
+$('#post_content').on('keyup',function(){
+	var count = $('#post_content').val().trim().split(' ');
+  $('#count').text(count.length);
+});

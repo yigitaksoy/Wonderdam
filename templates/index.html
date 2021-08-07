@@ -48,14 +48,14 @@
                                    </div>
                                </div>
                            </div>
-                           <h3 class="post-tag h5"><span class="badge bg-secondary">{{ post.post_category }}</span></h3>
+                           <h3 class="post-tag h5"><span class="badge">{{ post.post_category }}</span></h3>
                            {% else %}
                            <!-- Blog Info tags -->
                            <p class="info">
                               <span><i class="fa fa-user"></i> {{ post.author }}</span> 
                               <span>{{post.post_date}}</span>
                            </p>
-                           <h3 class="post-tag h5"><span class="badge bg-secondary">{{ post.post_category }}</span></h3>
+                           <h3 class="post-tag h5"><span class="badge">{{ post.post_category }}</span></h3>
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
                            <p class="text-clamp" style="white-space: pre-wrap;">{{ post.post_content }}</p>
@@ -101,14 +101,14 @@
                                    </div>
                                </div>
                            </div>
-                           <h3 class="post-tag h5"><span class="badge bg-secondary">{{ post.post_category }}</span></h3>
+                           <h3 class="post-tag h5"><span class="badge">{{ post.post_category }}</span></h3>
                            {% else %}
                            <!-- Blog Info tags -->
                            <p class="info">
                               <span><i class="fa fa-user"></i>{{ post.author }}</span> 
                               <span>{{post.post_date}}</span>
                            </p>
-                           <h3 class="post-tag h5"><span class="badge bg-secondary">{{ post.post_category }}</span></h3>
+                           <h3 class="post-tag h5"><span class="badge">{{ post.post_category }}</span></h3>
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
                            <p class="text-clamp"style="white-space: pre-wrap;">{{ post.post_content }}</p>

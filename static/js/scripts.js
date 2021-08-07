@@ -30,7 +30,9 @@ $('#password, #confirm_password').on('keyup', function () {
 });
 
 // Word counter for blog post textarea
-$('#post_content').on('keyup',function(){
-	var count = $('#post_content').val().trim().split(' ');
-  $('#count').text(count.length);
-});
+function countChars(obj){
+  var maxLength = 1500;
+  var strLength = obj.value.length;
+  
+  document.getElementById("counter").innerHTML = strLength+' out of '+maxLength+' characters';
+  }

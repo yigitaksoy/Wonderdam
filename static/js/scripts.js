@@ -20,3 +20,11 @@ $.extend($.expr[':'], {
 $('.post-tag span:contains("Restaurants")').css("background","var(--restaurants)");
 $('.post-tag span:contains("Terraces")').css("background","var(--terraces)");
 $('.post-tag span:contains("Nightlife")').css("background","var(--nightlife)");
+
+// Password match input validation for registration form
+$('#password, #confirm_password').on('keyup', function () {
+  if ($('#password').val() == $('#confirm_password').val()) {
+    $('#confirm-input').html('Passwords Match!').css('color', 'green');
+  } else 
+    $('#confirm-input').html('Password Dont Match!').css('color', 'var(--error)');
+});

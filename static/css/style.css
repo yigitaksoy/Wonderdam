@@ -183,6 +183,7 @@ a h2:hover{
 
 #nav-menu {
   background: var(--navbar-bg) !important;
+  border-bottom: 1px solid var(--bg-color);
 }
 
 #nav-menu .navbar-brand {

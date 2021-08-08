@@ -103,7 +103,7 @@ def homepage():
 
 
 # -- Blog Post -- #
-@app.route("/blog_post/<post_id>", methods=["GET", "POST"])
+@app.route("/blog_post/<post_id>", methods=["GET"])
 def blog_post(post_id):
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})

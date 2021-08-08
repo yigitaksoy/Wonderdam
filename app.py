@@ -419,7 +419,7 @@ def dashboard():
         total_categories = mongo.db.categories.count()
         users = list(mongo.db.users.find().sort("username", 1)) 
         total_users = mongo.db.users.count()
-        posts = list(mongo.db.posts.find().sort("post", 1))
+        posts = list(mongo.db.posts.find().sort("post_date", -1))
         total_posts = mongo.db.posts.count()
 
     else:

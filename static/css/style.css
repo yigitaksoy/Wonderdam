@@ -486,7 +486,7 @@ transition: color .9s ease;
 .counter span {
   font-family: antique-olive-nord, sans-serif;
   font-size: 1rem;
-  color: var(--hover);
+  color: var(--restaurants);
 }
 
 #preview {

@@ -18,7 +18,7 @@
   --error: #e1002d;
   --hover: #e1002d;
   --card: #1c1e21;
-  --restaurants: #e1002d;
+  --restaurants: #46735e;
   --terraces: #3f6eb0;
   --nightlife: #625ba9;
 }
@@ -486,7 +486,7 @@ transition: color .9s ease;
 .counter span {
   font-family: antique-olive-nord, sans-serif;
   font-size: 1rem;
-  color: var(--restaurants);
+  color: var(--hover);
 }
 
 #preview {

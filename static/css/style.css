@@ -282,6 +282,10 @@ a h2:hover{
   font-size: 4.5rem;
 }
 
+.post h2:hover {
+  color: var(--hover);
+}
+
 .post .content {
   margin-top: 3rem!important;
 }

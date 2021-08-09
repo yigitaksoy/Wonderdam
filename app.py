@@ -288,37 +288,40 @@ def add_post():
 # -- Edit Post --- #
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
+    if session.get("user"):
+        if request.method == "POST":
 
-    if request.method == "POST":
+            app.logger.info('in upload route')
+            cloudinary.config(
+                    cloud_name = os.getenv('CLOUD_NAME'), 
+                    api_key=os.getenv('API_KEY'), 
+                    api_secret=os.getenv('API_SECRET'))
+            upload_result = None
+            file_to_upload = request.files['post_image']
+            app.logger.info('%s file_to_upload', file_to_upload)
 
-        app.logger.info('in upload route')
-        cloudinary.config(
-                cloud_name = os.getenv('CLOUD_NAME'), 
-                api_key=os.getenv('API_KEY'), 
-                api_secret=os.getenv('API_SECRET'))
-        upload_result = None
-        file_to_upload = request.files['post_image']
-        app.logger.info('%s file_to_upload', file_to_upload)
-
-        if file_to_upload:
-            upload_result = cloudinary.uploader.upload(file_to_upload)
-            app.logger.info(upload_result)
+            if file_to_upload:
+                upload_result = cloudinary.uploader.upload(file_to_upload)
+                app.logger.info(upload_result)
 
 
-        submit = {
-            "post_title": request.form.get("post_title"),
-            "post_category": request.form.get("post_category"),
-            "post_content": request.form.get("post_content"),
-            "post_image": upload_result["url"],
-            "post_date": datetime.today().strftime("%d %B, %Y"),
-            "author": session["user"].title()
-        }
-        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
-        flash("Post Successfully Updated")
+            submit = {
+                "post_title": request.form.get("post_title"),
+                "post_category": request.form.get("post_category"),
+                "post_content": request.form.get("post_content"),
+                "post_image": upload_result["url"],
+                "post_date": datetime.today().strftime("%d %B, %Y"),
+                "author": session["user"].title()
+            }
+            mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
+            flash("Post Successfully Updated")
 
-    post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
-    categories = mongo.db.categories.find().sort("post_category", 1)
-    return render_template("edit_post.html", post=post, categories=categories)
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        categories = mongo.db.categories.find().sort("post_category", 1)
+        return render_template("edit_post.html", post=post, categories=categories)
+    else:
+        flash("Please sign in to edit this post")
+        return redirect(url_for("login"))
 
 
 # -- Delete Post --- #

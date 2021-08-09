@@ -18,7 +18,7 @@
   --error: #e1002d;
   --hover: #e1002d;
   --card: #1c1e21;
-  --restaurants: #ff5e2c;
+  --restaurants: #e1002d;
   --terraces: #3f6eb0;
   --nightlife: #625ba9;
 }
@@ -280,10 +280,6 @@ a h2:hover{
 
 .post h2 {
   font-size: 4.5rem;
-}
-
-.post h2:hover {
-  color: var(--hover);
 }
 
 .post .content {

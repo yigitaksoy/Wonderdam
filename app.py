@@ -334,13 +334,19 @@ def edit_post(post_id):
 # -- Delete Post --- #
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
-    if session.get("user"):
-        mongo.db.posts.remove({"_id": ObjectId(post_id)})
-        flash("Post Successfully Deleted")
-        return redirect(url_for("homepage"))
-    else:
-        flash("Please sign in to delete this post")
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in to delete your post')
         return redirect(url_for("login"))
+    else:
+        if session.get('user') == 'author':
+            mongo.db.posts.remove({"_id": ObjectId(post_id)})
+            flash("Post Successfully Deleted")
+            return redirect(url_for("homepage"))
+        else:
+            flash("You cant delete other users posts!")
+            return redirect(url_for("homepage"))
+
 
 
 # -- Categories --- #

@@ -247,13 +247,15 @@ def logout():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
 
-    if session.get("user"):
+    if session.get('user') == None:
+        flash("Please sign in to post")
+        return redirect(url_for("login"))
+    else:
         if request.method == "POST":
             # Check if post already exists in db
             existing_post = mongo.db.posts.find_one(
             {"post_title": request.form.get("post_title")}
             )
-
             app.logger.info('in upload route')
             cloudinary.config(
                 cloud_name = os.getenv('CLOUD_NAME'), 
@@ -266,7 +268,7 @@ def add_post():
             if file_to_upload:
                 upload_result = cloudinary.uploader.upload(file_to_upload)
                 app.logger.info(upload_result)
-            
+
             post = {
                 "post_title": request.form.get("post_title"),
                 "post_category": request.form.get("post_category"),
@@ -276,7 +278,6 @@ def add_post():
                 "post_date": datetime.today().strftime("%d %B, %Y"),
                 "author": session["user"]
             }
-
             if existing_post:
                 flash("Post already exists")
                 return render_template("add_post.html")
@@ -286,9 +287,7 @@ def add_post():
 
         categories = mongo.db.categories.find().sort("post_category", 1)
         return render_template("add_post.html", categories=categories)
-    else:
-        flash("Please sign in to Post")
-        return redirect(url_for("login"))
+
 
 
 # -- Edit Post --- #

@@ -62,7 +62,7 @@
                                 <td>
                                     <!-- Button trigger for delete user modal -->
                                     {% if user.username == 'admin'  %}
-                                        <p>No Actions</p>
+                                        <p class="text-center">No Actions</p>
                                     {% else %}
                                     <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-modal-{{ user._id }}">Delete</button>
                                     {% endif %}

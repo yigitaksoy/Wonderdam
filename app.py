@@ -28,6 +28,9 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
+# -- Admin User --- #
+ADMIN = 'admin'
+
 
 # -- Cloudinary Settings -- #
 cloudinary.config(
@@ -79,12 +82,6 @@ def paginate_args(posts, per_page):
     page = int(request.args.get('page', 1))
     total=len(posts)
     return Pagination(page=page, per_page=per_page, total=total)
-
-
-# -- Admin User --- #
-def admin_user():
-
-    return session['user'] == 'admin'
 
 
 # -- Homepage --- #
@@ -341,7 +338,7 @@ def delete_post(post_id):
 @app.route("/get_categories")
 def get_categories():
 
-    if admin_user():
+    if session['user'] == ADMIN:
         categories = list(mongo.db.categories.find().sort("post_category", 1))
         
     else:
@@ -356,7 +353,7 @@ def get_categories():
 def add_category():
 
     #Allow admin user to add new categories
-    if admin_user():
+    if session['user'] == ADMIN:
         if request.method == "POST":
             # Check if category already exists in db
             existing_category = mongo.db.categories.find_one(
@@ -385,7 +382,7 @@ def add_category():
 def delete_category(category_id):
 
     # Allow admin user to delete categories 
-    if admin_user():
+    if session['user'] == ADMIN:
         mongo.db.categories.remove({"_id": ObjectId(category_id)})
         flash("Category deleted")
      
@@ -401,7 +398,7 @@ def delete_category(category_id):
 def edit_category(category_id):
 
     # Allow admin user to edit categories
-    if admin_user():
+    if session['user'] == ADMIN:
         if request.method == "POST":
             submit = {
                 "post_category": request.form.get("post_category")
@@ -423,7 +420,7 @@ def edit_category(category_id):
 @app.route("/dashboard")
 def dashboard(): 
 
-    if admin_user():
+    if session['user'] == ADMIN:
         categories = list(mongo.db.categories.find().sort("post_category", 1))
         total_categories = mongo.db.categories.count()
         users = list(mongo.db.users.find().sort("username", 1)) 
@@ -444,7 +441,7 @@ def dashboard():
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
 
-    if admin_user():
+    if session['user'] == ADMIN:
         mongo.db.users.remove({"_id": ObjectId(user_id)})
         flash("User Successfully Deleted")
     
@@ -459,7 +456,7 @@ def delete_user(user_id):
 @app.route("/delete_user_post/<post_id>")
 def delete_user_post(post_id):
 
-    if admin_user():
+    if session['user'] == ADMIN:
         mongo.db.posts.remove({"_id": ObjectId(post_id)})
         flash("Post Successfully Deleted")
     else:

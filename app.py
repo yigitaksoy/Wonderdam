@@ -412,23 +412,28 @@ def delete_category(category_id):
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
 
-    # Allow admin user to edit categories
-    if session['user'] == ADMIN:
-        if request.method == "POST":
-            submit = {
-                "post_category": request.form.get("post_category")
-            }
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in as Admin User to perform this action')
+        return redirect(url_for("login"))
+    else:    
+        # Allow admin user to edit categories
+        if session['user'] == ADMIN:
+            if request.method == "POST":
+                submit = {
+                    "post_category": request.form.get("post_category")
+                }
 
-            mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
-            flash("Category Successfully Updated")
-            return redirect(url_for("dashboard"))
+                mongo.db.categories.update({"_id": ObjectId(category_id)}, submit)
+                flash("Category Successfully Updated")
+                return redirect(url_for("dashboard"))
 
-        category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
-        return render_template("edit_category.html", category=category)
-    
-    else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
+            category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+            return render_template("edit_category.html", category=category)
+
+        else:
+            flash('You are not authorized to perform this operation')
+            return redirect(url_for("homepage"))
 
 
 # -- Admin Dashboard --- #

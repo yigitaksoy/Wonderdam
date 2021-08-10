@@ -627,9 +627,13 @@ transition: color .9s ease;
 /* Registered Users Table */
  
 .user-table {
-  width: 700px;
+  width: 800px;
   background: var(--navbar-brand);
   margin: 0 auto;	
+}
+
+.user-table p {
+  font-size: 1rem!important;
 }
 
 .user-table button {

@@ -341,7 +341,7 @@ def delete_post(post_id):
         flash('Please sign in to delete your post')
         return redirect(url_for("login"))
     else:
-        if session.get('user') == 'author':
+        if session.get('user') == 'author' or session.get('user') == ADMIN:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
             flash("Post Successfully Deleted")
             return redirect(url_for("homepage"))

@@ -215,13 +215,18 @@ def profile(username):
 def delete_account(username):
 
     if session.get("user"):
-        mongo.db.users.remove({"username": username})
-        flash("User Successfully Deleted")
-        session.pop("user")
-        return redirect(url_for("homepage"))
+        if session["user"] == username:
+            mongo.db.users.remove({"username": username})
+            flash("User Successfully Deleted")
+            session.pop("user")
+            return redirect(url_for("homepage"))  
+        else:
+            flash("You can't delete other users accounts!")
+            return redirect(url_for("homepage"))
     else:
-        flash("You are not authorized to perform this operation")
-        return redirect(url_for("homepage"))
+        flash("You need to sign in to delete your account")
+        return render_template("login.html")
+    
     
 
 # -- User Logout --- #

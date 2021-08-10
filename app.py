@@ -471,15 +471,19 @@ def dashboard():
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
 
-    if session['user'] == ADMIN:
-        mongo.db.users.remove({"_id": ObjectId(user_id)})
-        flash("User Successfully Deleted")
-    
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in as Admin User to perform this action')
+        return redirect(url_for("login"))
     else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
-    
-    return redirect(url_for("dashboard"))
+        if session['user'] == ADMIN:
+            mongo.db.users.remove({"_id": ObjectId(user_id)})
+            flash("User Successfully Deleted")
+        else:
+            flash('You cant delete other users accounts!')
+            return redirect(url_for("homepage"))
+
+        return redirect(url_for("dashboard"))
 
 
 # -- Delete User Post --- #

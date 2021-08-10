@@ -446,21 +446,25 @@ def edit_category(category_id):
 @app.route("/dashboard")
 def dashboard(): 
 
-    if session['user'] == ADMIN:
-        categories = list(mongo.db.categories.find().sort("post_category", 1))
-        total_categories = mongo.db.categories.count()
-        users = list(mongo.db.users.find().sort("username", 1)) 
-        total_users = mongo.db.users.count()
-        posts = list(mongo.db.posts.find().sort("post_date", -1))
-        total_posts = mongo.db.posts.count()
-
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in as Admin User to perform this action')
+        return redirect(url_for("login"))
     else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
+        if session['user'] == ADMIN:
+            categories = list(mongo.db.categories.find().sort("post_category", 1))
+            total_categories = mongo.db.categories.count()
+            users = list(mongo.db.users.find().sort("username", 1)) 
+            total_users = mongo.db.users.count()
+            posts = list(mongo.db.posts.find().sort("post_date", -1))
+            total_posts = mongo.db.posts.count()
+        else:
+            flash('You are not authorized to perform this operation')
+            return redirect(url_for("homepage"))
 
-    return render_template("dashboard.html", categories=categories, total_categories=total_categories, 
-                                                users=users, total_users=total_users, 
-                                                    total_posts=total_posts, posts=posts)
+        return render_template("dashboard.html", categories=categories, total_categories=total_categories, 
+                                                    users=users, total_users=total_users, 
+                                                        total_posts=total_posts, posts=posts)
 
 
 # -- Delete Registered User -- #

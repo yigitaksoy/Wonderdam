@@ -513,6 +513,14 @@ transition: color .9s ease;
   .form-content  {
     padding: 50px 25px;
   }
+
+  .form-submit {
+    padding: 15px 25px;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    transition: color .9s ease;
+  
+  }
 }
 
 /* Blog Post Page */

@@ -387,16 +387,21 @@ def add_category():
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
 
-    # Allow admin user to delete categories 
-    if session['user'] == ADMIN:
-        mongo.db.categories.remove({"_id": ObjectId(category_id)})
-        flash("Category deleted")
-     
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in as Admin User to perform this action')
+        return redirect(url_for("login"))
     else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
-    
-    return redirect(url_for("dashboard"))
+        # Allow admin user to delete categories 
+        if session['user'] == ADMIN:
+            mongo.db.categories.remove({"_id": ObjectId(category_id)})
+            flash("Category deleted")
+
+        else:
+            flash('You are not authorized to perform this operation')
+            return redirect(url_for("homepage"))
+
+        return redirect(url_for("dashboard"))
 
 
 # -- Edit Category --- #

@@ -96,8 +96,8 @@
         <div class="row justify-content-center py-5">
             <h4 class="text-center" style="font-size: 2rem!important;">Categories</h4>
             <!-- Add Category -->
-            <div class="text-center">
-                <a class="text-center" style="font-size: 1.5rem!important;" href="{{ url_for('add_category') }}">Add Category</a>
+            <div class="text-center" style="margin-bottom: 3rem!important;">
+                <a style="font-size: 1rem!important;" class="form-submit" href="{{ url_for('add_category') }}">Add Category</a>
             </div>
             {% for category in categories %}
             <div class="col-md-4 col-xl-3">

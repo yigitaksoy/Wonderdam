@@ -218,7 +218,10 @@ def profile(username):
 @app.route("/delete_account/<username>")
 def delete_account(username):
 
-    if session.get("user"):
+    if session.get('user') == None:
+        flash("You need to sign in to delete your account")
+        return redirect(url_for("login"))
+    else:
         if session["user"] == username:
             mongo.db.users.remove({"username": username})
             flash("User Successfully Deleted")
@@ -227,10 +230,6 @@ def delete_account(username):
         else:
             flash("You can't delete other users accounts!")
             return redirect(url_for("homepage"))
-    else:
-        flash("You need to sign in to delete your account")
-        return render_template("login.html")
-    
     
 
 # -- User Logout --- #

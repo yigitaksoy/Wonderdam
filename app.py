@@ -348,21 +348,6 @@ def delete_post(post_id):
             return redirect(url_for("homepage"))
 
 
-
-# -- Categories --- #
-@app.route("/get_categories")
-def get_categories():
-
-    if session['user'] == ADMIN:
-        categories = list(mongo.db.categories.find().sort("post_category", 1))
-        
-    else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
-    
-    return render_template("categories.html", categories=categories)
-
-
 # -- Add Category --- #
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():

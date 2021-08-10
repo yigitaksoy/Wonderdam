@@ -357,29 +357,30 @@ def get_categories():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
 
-    #Allow admin user to add new categories
-    if session['user'] == ADMIN:
-        if request.method == "POST":
-            # Check if category already exists in db
-            existing_category = mongo.db.categories.find_one(
-            {"post_category": request.form.get("post_category")}
-            )
-            
-            category = {
-                "post_category": request.form.get("post_category")
-            }
-            if existing_category:
-                flash("Category already exists")
-                return render_template("add_category.html")
-            else:
-                mongo.db.categories.insert_one(category)
-                flash("New Category Added")
-                return redirect(url_for("dashboard"))
+    # Check if user is signed in
+    if session.get('user') == None:
+        flash('Please sign in as Admin User to perform this action')
+        return redirect(url_for("login"))
     else:
-        flash('You are not authorized to perform this operation')
-        return redirect(url_for("homepage"))
-
-    return render_template("add_category.html")
+        #Allow admin user to add new categories
+        if session['user'] == ADMIN:
+            if request.method == "POST":
+                # Check if category already exists in db
+                existing_category = mongo.db.categories.find_one(
+                {"post_category": request.form.get("post_category")})
+                category = {
+                    "post_category": request.form.get("post_category")}
+                if existing_category:
+                    flash("Category already exists")
+                    return render_template("add_category.html")
+                else:
+                    mongo.db.categories.insert_one(category)
+                    flash("New Category Added")
+                    return redirect(url_for("dashboard"))
+            return render_template("add_category.html")
+        else:
+            flash('You are not authorized to perform this operation')
+            return redirect(url_for("homepage"))
 
 
 # -- Delete Category --- #

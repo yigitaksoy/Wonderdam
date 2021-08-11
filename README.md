@@ -222,6 +222,7 @@ The process of cloning is now completed. For further information on cloning,
  - Code for Setting up Flask Mail was taken from Karina's Flask Mail setup instructions on [Slack](https://slack-files.com/T0L30B202-F01KX8QUEJF-6a89867a18).
  - Code for styling and structuring the forms were taken from [Colorlib](https://colorlib.com/etc/regform/colorlib-regform-8/)
  - Code for fitting bootstrap card images evenly was taken from [Stackoverflow](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width/53252725)
+ - Code for live character count on Add/Edit Post forms were taken from [Codexworld](https://www.codexworld.com/live-character-counter-javascript/)
 
 
 ## Acknowledgements

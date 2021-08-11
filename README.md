@@ -219,6 +219,7 @@ The process of cloning is now completed. For further information on cloning,
  - Code to show image previews on Add/Edit Posts are taken from [Learn Code Web](https://learncodeweb.com/snippets/browse-button-in-bootstrap-4-with-select-image-preview/)
  - Code for user password input validation on Register form was taken from [Stackoverflow](https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page)
  - Code for HTML email input pattern attribute was taken from [Stackoverflow](https://stackoverflow.com/questions/5601647/html5-email-input-pattern-attribute)
+ - Code for Setting up Flask Mail was taken from Karina's Flask Mail setup instructions on [Slack](https://slack-files.com/T0L30B202-F01KX8QUEJF-6a89867a18).
 
 
 ## Acknowledgements

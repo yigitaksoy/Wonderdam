@@ -229,3 +229,4 @@ The process of cloning is now completed. For further information on cloning,
 
 
 ## Disclaimer
+- All content on the website, including images and text, are used for educational purposes only.

@@ -546,6 +546,11 @@ transition: color .9s ease;
   width: 100%;
 }
 
+.post-link span {
+  font-family: gill-sans-nova, sans-serif!important;
+  border-bottom: 2px solid var(--hover);
+}
+
 @media screen and (max-width: 1024px) {
   .post-img-container {
     height: 30vh;

@@ -4,11 +4,11 @@ import cloudinary
 import cloudinary.uploader
 from flask import (
     Flask, flash, render_template,
-    redirect, request, session, url_for, jsonify)
+    redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
-from flask_paginate import Pagination, get_page_args
-from flask_cors import CORS, cross_origin
+from flask_paginate import Pagination
+from flask_cors import CORS
 from dotenv import load_dotenv
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash

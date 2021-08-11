@@ -24,6 +24,7 @@ app = Flask(__name__)
 
 CORS(app)
 
+# -- MongoDB Settings -- #
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -57,6 +58,7 @@ app.config.update(mail_settings)
 # -- Create instance of Flask Mail
 mail =Mail(app)
 
+# -- Create instance of PyMongo
 mongo = PyMongo(app)
 
 
@@ -88,6 +90,11 @@ def paginate_args(posts, per_page):
 @app.route("/")
 @app.route("/homepage")
 def homepage():
+    """
+    Gets all post data from the database, and renders 
+    into Homepage template. Using the pagination only 5 posts
+    are shown per page.  
+    """
 
     posts = list(mongo.db.posts.find().sort("post_date", 1))
     pagination_posts = paginate_posts(posts, POSTS_PER_PAGE)
@@ -102,6 +109,10 @@ def homepage():
 # -- Blog Post -- #
 @app.route("/blog_post/<post_id>", methods=["GET"])
 def blog_post(post_id):
+    """
+    Gets blog post content from its unique Id,
+    and renders all its data into Blog Post template.
+    """
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
     return render_template("blog_post.html", post=post)
@@ -110,7 +121,11 @@ def blog_post(post_id):
 # -- Search Posts --- #
 @app.route("/search", methods=["GET", "POST"])
 def search():
-
+    """
+    Search function, searches the query and presents the data
+    into the template with Pagination. Users are able to search
+    for all categories, posts specific to user, and all the posts. 
+    """
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
 
@@ -125,7 +140,11 @@ def search():
 # -- User Register --- #
 @app.route("/register", methods=["GET", "POST"])
 def register():
-
+    """
+    Searches the database if user already exists,
+    if not user is added into the dictionary and redirected
+    to their own profile page. 
+    """
     if request.method == "POST":
         # Check if username already exists in db
         existing_user = mongo.db.users.find_one(
@@ -163,7 +182,12 @@ def register():
 # -- User Login --- #
 @app.route("/login", methods=["GET", "POST"])
 def login():
-
+    """
+    Login function, checks if user exits in the database,
+    and checks if the password mathces the user input. If not,
+    user is redirected to the login page. If user doesnt exits
+    a flash message is shown and user get redirected.
+    """
     if request.method == "POST":
         # Check if username exists in db
         existing_user = mongo.db.users.find_one(
@@ -194,7 +218,11 @@ def login():
 # -- User Profile --- #
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
-
+    """
+    User profile, checks if user is signed in, if not user's
+    username is requested from database and profile page with
+    users own posts is rendered. 
+    """
     # Check if user is signed in
     if session.get('user') == None:
         flash('Please sign in to see your Profile Page')
@@ -217,6 +245,11 @@ def profile(username):
 # -- Delete Account --- #
 @app.route("/delete_account/<username>")
 def delete_account(username):
+    """
+    Delete Account, checks if user is signed in, 
+    if they are, then user is removed from the database,
+    and session cookies are removed. 
+    """
 
     if session.get('user') == None:
         flash("You need to sign in to delete your account")
@@ -235,6 +268,10 @@ def delete_account(username):
 # -- User Logout --- #
 @app.route("/logout")
 def logout():
+    """
+    Logout, removes user from session cookies,
+    and redirects them to the homepage.
+    """
 
     # Remove user from session cookie   
     flash("You have been logged out")
@@ -245,6 +282,13 @@ def logout():
 # -- Add Post --- #
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
+    """
+    Add post, checks if user is signed in before posting,
+    if they are, checks if the current post title already exists
+    in the database, if not then post is added into the database, 
+    image file is uploaded to cloudinary, and user is informed with a 
+    flash message.
+    """
 
     if session.get('user') == None:
         flash("Please sign in to post")
@@ -293,7 +337,11 @@ def add_post():
 # -- Edit Post --- #
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
-
+    """
+    Edit post, checks if user is signed in, if they are gets 
+    all the current post data from the databse for post author,
+    and updates the post data. 
+    """
     if session.get('user') == None:
         flash("Please sign in to edit this post")
         return redirect(url_for("login"))
@@ -336,6 +384,12 @@ def edit_post(post_id):
 # -- Delete Post --- #
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
+    """
+    Delete post, checks if user is signed in, then checks
+    if user is the author of that specific post, if they are
+    post data is removed from the database, and a confirmation
+    message is shown to the author.
+    """
     # Check if user is signed in
     if session.get('user') == None:
         flash('Please sign in to delete your post')
@@ -353,6 +407,12 @@ def delete_post(post_id):
 # -- Add Category --- #
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
+    """
+    Add category, stricted only for Admin use. Checks if the user
+    is signed in, if they are checks if the current user has admin
+    credentials. If the user has admin credentials, checks if the current
+    category already exits, if not, category is added into the database.
+    """
 
     # Check if user is signed in
     if session.get('user') == None:
@@ -383,6 +443,11 @@ def add_category():
 # -- Delete Category --- #
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
+    """
+    Delete Category, stricted only for Admin use.
+    Checks if user is signed in and has admin credentials.
+    If they do selected category is removed from the database. 
+    """
 
     # Check if user is signed in
     if session.get('user') == None:
@@ -404,6 +469,12 @@ def delete_category(category_id):
 # -- Edit Category --- #
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
+    """
+    Edit Category, restricted for only Admin use. Checks if user is 
+    signed in, and has admin credentials. If they do, the selected
+    category data is retrieved from the database, and updated after submission.
+    Success message is shown to the Admin. 
+    """
 
     # Check if user is signed in
     if session.get('user') == None:
@@ -432,6 +503,14 @@ def edit_category(category_id):
 # -- Admin Dashboard --- #
 @app.route("/dashboard")
 def dashboard(): 
+    """
+    Admin Dashboard, stricted for Admin use only. Gets
+    all the blog data from the database including number of
+    registered users and its data, all the category information,
+    along with all the user data to review. Allows admin user to
+    edit, delete all categories, and posts, and users from the
+    database.
+    """
 
     # Check if user is signed in
     if session.get('user') == None:
@@ -457,6 +536,11 @@ def dashboard():
 # -- Delete Registered User -- #
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
+    """
+    Delete Registered users, stricted for Admin use
+    only. Allows admin user to delete specific user from 
+    the database. 
+    """
 
     # Check if user is signed in
     if session.get('user') == None:
@@ -476,6 +560,10 @@ def delete_user(user_id):
 # -- Delete User Post --- #
 @app.route("/delete_user_post/<post_id>")
 def delete_user_post(post_id):
+    """
+    Delete user post, stricted for Admin use only. Allows
+    admin user to delete any post data located in the database.
+    """
 
     if session.get('user') == None:
         flash('Please sign in as Admin User to perform this action')
@@ -494,6 +582,11 @@ def delete_user_post(post_id):
 # -- Contact --- #
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
+    """
+    Contact, renders contact page template, and using 
+    Flask Mail functionality, allows users to contact
+    the admin via e-mail. 
+    """
     if request.method == "POST":
         with app.app_context():
             msg = Message(subject="New Email From Wonderdam Blog")
@@ -520,7 +613,7 @@ def contact():
 @app.errorhandler(404)
 def page_not_found(e):
     """
-    Renders a custom 404 error page 
+    Page Not Found error, Renders a 404 error page.
     """
     return render_template("404.html"), 404
 
@@ -529,7 +622,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def server_not_found(e):
     """
-    Renders a custom 500 error page 
+    Server Not Found error, Renders a 505 error page. 
     """
     return render_template("500.html"), 500
 

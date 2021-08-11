@@ -540,12 +540,19 @@ transition: color .9s ease;
   margin-top: 2rem;
 }
 
-.post-page-img {
-  max-width: 100%;
-  height: 600px;
-  object-fit: contain;
+.post-img-container {
+  height: 75vh;
+  min-height: 100%;
+  width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  .post-img-container {
+    height: 30vh;
+    min-height: 100%;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px){
 
   #blog-post-container {
@@ -559,11 +566,22 @@ transition: color .9s ease;
   .post-page-content {
     padding: 1rem 0!important;
   }
+
+  .post-img-container {
+    height: 30vh;
+    min-height: 100%;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 414px) {
   #blog-post-container h2{
     font-size: 2.5rem!important; 
+  }
+
+  .post-page-img {
+    max-width: 100%;
+    object-fit: cover;
   }
 }
 

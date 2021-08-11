@@ -274,6 +274,7 @@ def add_post():
                 "post_content": request.form.get("post_content"),
                 "post_image": upload_result["url"],
                 "post_address": request.form.get("post_address"),
+                "website": request.form.get("website"),
                 "post_date": datetime.today().strftime("%d %B, %Y"),
                 "author": session["user"]
             }
@@ -317,6 +318,7 @@ def edit_post(post_id):
                     "post_content": request.form.get("post_content"),
                     "post_image": upload_result["url"],
                     "post_address": request.form.get("post_address"),
+                    "website": request.form.get("website"),
                     "post_date": datetime.today().strftime("%d %B, %Y"),
                     "author": session["user"]
                 }

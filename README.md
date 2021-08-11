@@ -230,3 +230,6 @@ The process of cloning is now completed. For further information on cloning,
 
 ## Disclaimer
 - All content on the website, including images and text, are used for educational purposes only.
+
+## Miscellaneous
+- During the early development stages of the project, delete modal title was updated on User Profile page, but due to long hours of coding this commit was mis-stated as "Update delete modal title on post page" which was meant for Profile Page. [See commit](https://github.com/yigitaksoy/Wonderdam/commit/a0547907ea744e8d0e4447f9a7611a32a2c425dd) 

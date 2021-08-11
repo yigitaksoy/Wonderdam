@@ -197,7 +197,7 @@ a h2:hover{
 
 #nav-menu ul .nav-link {
   color: var(--nav-links);
-  font-size: .7rem;
+  font-size: .8rem;
   letter-spacing: .2rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -281,6 +281,7 @@ a h2:hover{
 
 .post h2 {
   font-size: 4.5rem;
+  z-index: 3;
 }
 
 .post h2:hover {

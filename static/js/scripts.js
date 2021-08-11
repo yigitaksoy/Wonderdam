@@ -16,6 +16,7 @@ $('.post-tag span:contains("Terraces")').css("background","var(--terraces)");
 $('.post-tag span:contains("Nightlife")').css("background","var(--nightlife)");
 
 // Password match input validation for registration form
+// Code Credit: https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page
 $('#password, #confirm_password').on('keyup', function () {
   if ($('#password').val() == $('#confirm_password').val()) {
     $('#confirm-input').html('Passwords Match!').css('color', 'green');
@@ -24,6 +25,7 @@ $('#password, #confirm_password').on('keyup', function () {
 });
 
 // Word counter for blog post textarea
+// Code Credit: https://www.codexworld.com/live-character-counter-javascript/
 function countChars(obj){
   var maxLength = 1500;
   var strLength = obj.value.length;
@@ -32,6 +34,7 @@ function countChars(obj){
   }
 
 // Show input image preview on Add/Edit Post forms
+// Code Credit: https://learncodeweb.com/snippets/browse-button-in-bootstrap-4-with-select-image-preview/
 $('input[type="file"]').change(function(e) {
   var fileName = e.target.files[0].name;
   $("#file").val(fileName);

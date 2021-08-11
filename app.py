@@ -318,7 +318,7 @@ def edit_post(post_id):
                     "post_image": upload_result["url"],
                     "post_address": request.form.get("post_address"),
                     "post_date": datetime.today().strftime("%d %B, %Y"),
-                    "author": session["user"].title()
+                    "author": session["user"]
                 }
                 mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
                 flash("Post Successfully Updated")

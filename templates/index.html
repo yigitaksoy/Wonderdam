@@ -111,7 +111,7 @@
                            <h3 class="post-tag h5"><span class="badge">{{ post.post_category }}</span></h3>
                            {% endif %}
                            <a href="{{ url_for('blog_post', post_id=post._id) }}"><h2>{{ post.post_title }}</h2></a>
-                           <p class="text-clamp"style="white-space: pre-wrap;">{{ post.post_content }}</p>
+                           <p class="text-clamp" style="white-space: pre-wrap;">{{ post.post_content }}</p>
                            <a href="{{ url_for('blog_post', post_id=post._id) }}" class="read">Read Post</a>
                         </div>
                      </div>
@@ -120,15 +120,14 @@
             </div>
          {% endfor %}
    {% else %}
-   <h3 class="text-center">No Results Found</h3>
+      <h3 class="text-center">No Results Found</h3>
    {% endif %}
-  </div>
-  <div class="pagination">
-      <div class="text-center title">
-         {{ pagination.links }}
-         {{ pagination.info }}
-      </div>
-  </div>
+   <div class="pagination">
+       <div class="text-center title">
+          {{ pagination.links }}
+          {{ pagination.info }}
+       </div>
+   </div>
 </section>
 
 {% endblock %}

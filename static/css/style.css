@@ -159,6 +159,8 @@ a h2:hover{
 /*  Flash Messages  */
 
 .flashes h4{
+  background-color: var(--hover);
+  color: var(--flashes);
   font-size: 1.5rem;
   border-bottom: 3px solid var(--hover);
   font-weight: 900;

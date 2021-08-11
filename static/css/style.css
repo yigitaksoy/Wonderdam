@@ -377,7 +377,8 @@ a h2:hover{
 .register,
 .add-post,
 .edit-post,
-.contact {
+.contact,
+.add-category {
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 14px
@@ -499,6 +500,10 @@ transition: color .9s ease;
   #preview {
     height: auto;
     width: auto;
+  }
+  .add-category {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 

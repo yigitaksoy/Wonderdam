@@ -102,10 +102,9 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/color-palette.png"  alt="color-palette">
 
 
-
-
-
 ### Typography
+
+There are three Adobe fonts used throught the website. [P22 Pooper Black](https://fonts.adobe.com/fonts/p22-pooper-black) is used for logo, [Antique Olive Nord](https://fonts.adobe.com/fonts/antique-olive) used for all titles and post "Read More" links. [Paralucent](https://fonts.adobe.com/fonts/paralucent) was used on all the texts to give the website a modern and minimalistic feel. 
 
 
 

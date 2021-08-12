@@ -114,6 +114,21 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ### Wireframes
 
+- [Homepage](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Homepage.png)
+- [Blog Post Page](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Blog%20Post%20Page.png)
+- [Register](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Register.png)
+- [Login](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Login.png)
+- [Contact](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Contact.png)
+- [Profile Page for New User](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20New%20User.png)
+- [Profile Page without Posts](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20user%20without%20posts.png)
+- [Profile Page with Posts](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20with%20posts.png)
+- [Add Post](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Add%20Post.png)
+- [Edit Post](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Edit%20Post.png)
+- [Add Category](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Add%20Category.png)
+- [Edit Category](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Edit%20Category.png)
+- [Admin Dashboard](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Admin%20Dashboard.png)
+- [Error 404](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Error%20404.png)
+- [Error 500](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Error%20500.png)
 
 
 ## Features

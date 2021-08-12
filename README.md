@@ -97,6 +97,10 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 ### Color Scheme
 
+- The colors used throughout the website are:
+
+<img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/color-palette.png"  alt="color-palette">
+
 
 
 

@@ -35,12 +35,12 @@ ADMIN = 'admin'
 
 # -- Cloudinary Settings -- #
 cloudinary.config(
-    cloud_name = os.getenv('CLOUD_NAME'), 
-    api_key=os.getenv('API_KEY'), 
+    cloud_name = os.getenv('CLOUD_NAME'),
+    api_key=os.getenv('API_KEY'),
     api_secret=os.getenv('API_SECRET'))
 
 
-# -- Flask Mail Settings -- # 
+# -- Flask Mail Settings -- #
 mail_settings = {
     "MAIL_SERVER": os.environ.get('MAIL_SERVER'),
     "MAIL_PORT": os.environ.get('MAIL_PORT'),
@@ -91,9 +91,9 @@ def paginate_args(posts, per_page):
 @app.route("/homepage")
 def homepage():
     """
-    Gets all post data from the database, and renders 
+    Gets all post data from the database, and renders
     into Homepage template. Using the pagination only 5 posts
-    are shown per page.  
+    are shown per page.
     """
 
     posts = list(mongo.db.posts.find().sort("post_date", 1))
@@ -102,7 +102,7 @@ def homepage():
     page_num = request.args.get('page', 1, type=int)
 
     return render_template(
-        "index.html", posts=pagination_posts, 
+        "index.html", posts=pagination_posts,
                     pagination=pagination, page_num=page_num)
 
 
@@ -124,7 +124,7 @@ def search():
     """
     Search function, searches the query and presents the data
     into the template with Pagination. Users are able to search
-    for all categories, posts specific to user, and all the posts. 
+    for all categories, posts specific to user, and all the posts.
     """
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
@@ -133,7 +133,7 @@ def search():
     pagination_posts = paginate_posts(posts, POSTS_PER_PAGE)
     pagination = paginate_args(posts, POSTS_PER_PAGE)
 
-    return render_template("index.html", posts=pagination_posts, 
+    return render_template("index.html", posts=pagination_posts,
                     pagination=pagination, total=total)
 
 
@@ -143,7 +143,7 @@ def register():
     """
     Searches the database if user already exists,
     if not user is added into the dictionary and redirected
-    to their own profile page. 
+    to their own profile page.
     """
     if request.method == "POST":
         # Check if username already exists in db
@@ -221,7 +221,7 @@ def profile(username):
     """
     User profile, checks if user is signed in, if not user's
     username is requested from database and profile page with
-    users own posts is rendered. 
+    users own posts is rendered.
     """
     # Check if user is signed in
     if session.get('user') == None:
@@ -232,12 +232,12 @@ def profile(username):
             # Grab the session user's username from db
             username = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
-            # Get all the posts by current users 
+            # Get all the posts by current users
             posts = list(mongo.db.posts.find(
                 {"author": session["user"]}).sort("post_date", 1))
         else:
             flash('You cant see other users profile')
-            return redirect(url_for("homepage"))   
+            return redirect(url_for("homepage"))
         # Render user profile page
         return render_template("profile.html", username=username, posts=posts)
 
@@ -246,9 +246,9 @@ def profile(username):
 @app.route("/delete_account/<username>")
 def delete_account(username):
     """
-    Delete Account, checks if user is signed in, 
+    Delete Account, checks if user is signed in,
     if they are, then user is removed from the database,
-    and session cookies are removed. 
+    and session cookies are removed.
     """
 
     if session.get('user') == None:
@@ -259,11 +259,11 @@ def delete_account(username):
             mongo.db.users.remove({"username": username})
             flash("User Successfully Deleted")
             session.pop("user")
-            return redirect(url_for("homepage"))  
+            return redirect(url_for("homepage"))
         else:
             flash("You can't delete other users accounts!")
             return redirect(url_for("homepage"))
-    
+
 
 # -- User Logout --- #
 @app.route("/logout")
@@ -273,7 +273,7 @@ def logout():
     and redirects them to the homepage.
     """
 
-    # Remove user from session cookie   
+    # Remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("homepage"))
@@ -285,8 +285,8 @@ def add_post():
     """
     Add post, checks if user is signed in before posting,
     if they are, checks if the current post title already exists
-    in the database, if not then post is added into the database, 
-    image file is uploaded to cloudinary, and user is informed with a 
+    in the database, if not then post is added into the database,
+    image file is uploaded to cloudinary, and user is informed with a
     flash message.
     """
 
@@ -301,8 +301,8 @@ def add_post():
             )
             app.logger.info('in upload route')
             cloudinary.config(
-                cloud_name = os.getenv('CLOUD_NAME'), 
-                api_key=os.getenv('API_KEY'), 
+                cloud_name = os.getenv('CLOUD_NAME'),
+                api_key=os.getenv('API_KEY'),
                 api_secret=os.getenv('API_SECRET'))
             upload_result = None
             file_to_upload = request.files['post_image']
@@ -338,9 +338,9 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     """
-    Edit post, checks if user is signed in, if they are gets 
+    Edit post, checks if user is signed in, if they are gets
     all the current post data from the databse for post author,
-    and updates the post data. 
+    and updates the post data.
     """
     if session.get('user') == None:
         flash("Please sign in to edit this post")
@@ -350,8 +350,8 @@ def edit_post(post_id):
             if request.method == "POST":
                 app.logger.info('in upload route')
                 cloudinary.config(
-                        cloud_name = os.getenv('CLOUD_NAME'), 
-                        api_key=os.getenv('API_KEY'), 
+                        cloud_name = os.getenv('CLOUD_NAME'),
+                        api_key=os.getenv('API_KEY'),
                         api_secret=os.getenv('API_SECRET'))
                 upload_result = None
                 file_to_upload = request.files['post_image']
@@ -446,7 +446,7 @@ def delete_category(category_id):
     """
     Delete Category, stricted only for Admin use.
     Checks if user is signed in and has admin credentials.
-    If they do selected category is removed from the database. 
+    If they do selected category is removed from the database.
     """
 
     # Check if user is signed in
@@ -454,7 +454,7 @@ def delete_category(category_id):
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
-        # Allow admin user to delete categories 
+        # Allow admin user to delete categories
         if session['user'] == ADMIN:
             mongo.db.categories.remove({"_id": ObjectId(category_id)})
             flash("Category deleted")
@@ -470,17 +470,17 @@ def delete_category(category_id):
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """
-    Edit Category, restricted for only Admin use. Checks if user is 
+    Edit Category, restricted for only Admin use. Checks if user is
     signed in, and has admin credentials. If they do, the selected
     category data is retrieved from the database, and updated after submission.
-    Success message is shown to the Admin. 
+    Success message is shown to the Admin.
     """
 
     # Check if user is signed in
     if session.get('user') == None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
-    else:    
+    else:
         # Allow admin user to edit categories
         if session['user'] == ADMIN:
             if request.method == "POST":
@@ -502,7 +502,7 @@ def edit_category(category_id):
 
 # -- Admin Dashboard --- #
 @app.route("/dashboard")
-def dashboard(): 
+def dashboard():
     """
     Admin Dashboard, stricted for Admin use only. Gets
     all the blog data from the database including number of
@@ -520,7 +520,7 @@ def dashboard():
         if session['user'] == ADMIN:
             categories = list(mongo.db.categories.find().sort("post_category", 1))
             total_categories = mongo.db.categories.count()
-            users = list(mongo.db.users.find().sort("username", 1)) 
+            users = list(mongo.db.users.find().sort("username", 1))
             total_users = mongo.db.users.count()
             posts = list(mongo.db.posts.find().sort("post_date", -1))
             total_posts = mongo.db.posts.count()
@@ -528,8 +528,8 @@ def dashboard():
             flash('You are not authorized to perform this operation')
             return redirect(url_for("homepage"))
 
-        return render_template("dashboard.html", categories=categories, total_categories=total_categories, 
-                                                    users=users, total_users=total_users, 
+        return render_template("dashboard.html", categories=categories, total_categories=total_categories,
+                                                    users=users, total_users=total_users,
                                                         total_posts=total_posts, posts=posts)
 
 
@@ -538,8 +538,8 @@ def dashboard():
 def delete_user(user_id):
     """
     Delete Registered users, stricted for Admin use
-    only. Allows admin user to delete specific user from 
-    the database. 
+    only. Allows admin user to delete specific user from
+    the database.
     """
 
     # Check if user is signed in
@@ -583,9 +583,9 @@ def delete_user_post(post_id):
 @app.route("/contact", methods=["GET", "POST"])
 def contact():
     """
-    Contact, renders contact page template, and using 
+    Contact, renders contact page template, and using
     Flask Mail functionality, allows users to contact
-    the admin via e-mail. 
+    the admin via e-mail.
     """
     if request.method == "POST":
         with app.app_context():
@@ -622,7 +622,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def server_not_found(e):
     """
-    Server Not Found error, Renders a 505 error page. 
+    Server Not Found error, Renders a 505 error page.
     """
     return render_template("500.html"), 500
 

@@ -59,11 +59,32 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 #### First Time Visitor Goals
 
+- I want to understand the main purpose of the website.
+- I want to easily navigate through the website.
+- I want to find out how I can register to the website, and upload a post.
+- I want to find out how I can search for posts.
+- I want to be able to find out how I contact the blog owner.
 
-#### Returning Visitor Goals
 
+#### Registered Visitor Goals
 
-#### Frequent User Goals
+- I want to find out how I can login to my profile.
+- I want to find out how I can add a new post.
+- I want to find out how I can edit my posts.
+- I want to find out how I can delete my posts.
+- I want to find be able to see all my posts.
+- I want to find out how i can search through all the current posts, and categories.
+- I want to find out how to delete my blog account.
+
+#### Admin User Goals
+
+- I want to be able to edit user posts.
+- I want to be able to delete user posts.
+- I want to be able to delete unwanted users from the blog.
+- I want to be able to manage add/edit/delete categories.
+- I want to find out how many posts are currently on the blog.
+- I want to find out how many categories are currently on the blog.
+- I want to find out how many users are currently registered on the blog.
 
 
 ## Strategy 

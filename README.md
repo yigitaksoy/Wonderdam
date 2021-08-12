@@ -139,6 +139,14 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Responsive on all device sizes.
 - Navbar and Footer is visible on all pages.
 
+ **Navbar**
+ - Fixed on top of the page on all device sizes.
+ - Shown as a collapsible navbar with a hamburger button for triger on Mobile devices and Tables.
+ - Features a search bar allowing user to make searches throughout the website. Search function allows users to search for Posts by Author and title, and allows user to search posts by category.
+ - Features 3 different layouts, for guest users Home, Login, Register and Contact links are present.
+ - For Registered users, Home, Profile, Add Post, Logout and Contact links are Present.
+ - For Admin user All the links are present along with a link for Admin Dashboard.
+
  **Homepage**
 - Features an interactive, and modern design.
 - Using Javascript animations, Post images, and Titles are seamlessly presented to the user in an orderly fashion as user scrolls through the page, providing a unique experience.

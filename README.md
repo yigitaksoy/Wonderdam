@@ -90,6 +90,7 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 ## Strategy 
 
+- The goal of the website is to inform local residents, tourists how are visiting, or looking to visit Amsterdam about all the new local cafes, restaurants and bars. The blog aims to attract more visitors by presenting up to date information about these places, aims create a community around the blog, and to be the go-to place as a local Amsterdam guide.
 
 ## Design 
 

@@ -53,7 +53,7 @@ The website is fully interactive, built with mobile-first design in mind, and ac
  
  
 ## UX
-
+- The Blog features a modern, interactive, and easy-to-use design for visitors to easily navigate and enjoy their time during their visit. 
 
 ### User stories
 

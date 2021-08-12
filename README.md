@@ -78,6 +78,7 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 #### Admin User Goals
 
+- I want to be able to add new posts.
 - I want to be able to edit user posts.
 - I want to be able to delete user posts.
 - I want to be able to delete unwanted users from the blog.

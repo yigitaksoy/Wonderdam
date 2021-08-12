@@ -7,7 +7,7 @@
 </h3>
 
 
-<div align="center"> 
+<div align="center">
 
 
 <br><br>
@@ -18,9 +18,9 @@
 
 # Wonderdam
 
-## Overview 
+## Overview
 
-This is the main website for Wonderdam, a local guide for hidden gems, popular restaurants, cafes, terraces, and bars located in Amsterdam. The website aims to target tourists who are looking for suggestions, or locals who are looking for news places to discover in the great city of Amsterdam. The website's main focus is to inform people about what or where to eat, or make suggestions for people who just want hangout with their friends and family and wants to try somewhere new in the city. 
+This is the main website for Wonderdam, a local guide for hidden gems, popular restaurants, cafes, terraces, and bars located in Amsterdam. The website aims to target tourists who are looking for suggestions, or locals who are looking for news places to discover in the great city of Amsterdam. The website's main focus is to inform people about what or where to eat, or make suggestions for people who just want hangout with their friends and family and wants to try somewhere new in the city.
 
 The website is fully interactive, built with mobile-first design in mind, and accessible on a wide range of mobile devices, and tablets.
 
@@ -50,10 +50,10 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 7. [**Disclaimer**](#disclaimer)
 
- 
- 
+
+
 ## UX
-- The Blog features a modern, interactive, and easy-to-use design for visitors to easily navigate and enjoy their time during their visit. 
+- The Blog features a modern, interactive, and easy-to-use design for visitors to easily navigate and enjoy their time during their visit.
 
 ### User stories
 
@@ -88,11 +88,11 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 - I want to find out how many users are currently registered on the blog.
 
 
-## Strategy 
+## Strategy
 
 - The goal of the website is to inform local residents, tourists how are visiting, or looking to visit Amsterdam about all the new local cafes, restaurants and bars. The blog aims to attract more visitors by presenting up to date information about these places, aims create a community around the blog, and to be the go-to place as a local Amsterdam guide.
 
-## Design 
+## Design
 
 
 ### Color Scheme
@@ -104,7 +104,7 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 ### Typography
 
-There are three Adobe fonts used throught the website. [P22 Pooper Black](https://fonts.adobe.com/fonts/p22-pooper-black) is used for logo, [Antique Olive Nord](https://fonts.adobe.com/fonts/antique-olive) used for all titles and post "Read More" links. [Paralucent](https://fonts.adobe.com/fonts/paralucent) was used on all the texts to give the website a modern and minimalistic feel. 
+There are three Adobe fonts used throught the website. [P22 Pooper Black](https://fonts.adobe.com/fonts/p22-pooper-black) is used for logo, [Antique Olive Nord](https://fonts.adobe.com/fonts/antique-olive) used for all titles and post "Read More" links. [Paralucent](https://fonts.adobe.com/fonts/paralucent) was used on all the texts to give the website a modern and minimalistic feel.
 
 
 
@@ -133,9 +133,81 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 
 ## Features
- 
+
 ### Existing Features
 
+- Responsive on all device sizes.
+- Navbar and Footer is visible on all pages.
+
+ **Homepage**
+- Features an interactive, and modern design.
+- Using Javascript animations, Post images, and Titles are seamlessly presented to the user in an orderly fashion as user scrolls through the page, providing a unique experience.
+- Features Pagination to show only 5 posts per page for a clean UX.
+- Each post on homepage displays Author, Post date, and Category information, and each Category color is given a unique color using Jquery.
+- For post authors, a Delete and Edit button is displayed on their post for users to easily manage their posts from Homepage.
+- For Admin user all the posts feature a Delete and Edit button, allowing Admin user to easily Edit or Delete Unwanted user posts directly from the Homepage.
+
+ **Register Page**
+- Features a clean registration for user to signup for the blog.
+- Each section of form input area features a placeholder text.
+- Underneath the form inputs, there is a placeholder text explaining the required data for input, helping users to easily match the requested format.
+
+ **Login Page**
+- Features a clean form for users to login to their blog.
+- Each section of form input area features a placeholder text.
+- Underneath the form inputs, there is a placeholder text explaining the required data for input, helping users to easily match the requested format.
+- Upon succcessful submission, user is redirected to their own profile page.
+
+ **Profile Page**
+- Features a clean layout.
+- Shows a greeting message to the User upon successful login.
+- Features a section showing all the posts by the user, allowing them to edit or delete their posts.
+- If user has no posts, then a message is presented to the user, asking them if they would like to add a new post.
+- At the bottom of the page there is a "Delete Account" button featuring a modal for user confirmation.
+
+ **Add Post Page**
+- Stricted only for registered users.
+- Page features a clean form for users to use, outlining all the required information in the form.
+- Form features an image preview section allowing users to see their post images before uploading.
+- Using file upload, and Cloudinary service, form allows users to easily upload their image to the cloud, and eliminates the hassle of looking for image urls.
+- File upload function allows user to only upload image files such as jpeg, jpg, and png. Any other file extensions are restricted.
+- After submission, form checks if the current Post title exits in the database, restricting users from adding duplicate posts.
+- Upon successful post, user get redirected to the homepage and greeted with a success message.
+
+**Edit Post Page**
+- Stricted only for post authors.
+- Page features the same form and features as the Add Post page.
+- Each section of the form is pre-filled with the data they provided when they submited the form, allowing users to easily edit the post information.
+- After submission, form checks if the current Post title exits in the database, restricting users from adding duplicate posts.
+- Upon successful post, user get redirected to the homepage and greeted with a success message.
+
+**Contact Page**
+- Allowed for all visitors and users of the blog.
+- Using Flask Mail, users are able to contact the Blog Admin via the form.
+- Upon successfull submission users are greeted with a success message, and email is sent for Admin user to see.
+
+**Admin Dashboard**
+- Stricted for Admin use only, and features a variety options for the Admin user to easily manage and be in total control.
+- On top of the page, info cards are presented for the admin user. Each card shows a real-time information about total number of users, total number of posts, and total number of categories.
+- Underneath the blog info cards, a responsive table of registered user list is presented along with all the information users provided. Next to each user there is a call to action button for user deletion, allowing admin user to delete any unwanted users. Admin user deletion is restricted from the table.
+- Underneath the Registered users table, All the categories are listed for Admin user to manage. Along with a Add Category button for Admin user to easily add new categories if needed.
+- Underneath the Categories section, Recent posts section is presented to the Admin user showing all the current posts on the page showing their titles and images. Each post card features a Edit and Delete button, allowing Admin user to easily manage current posts on the blog.
+
+**Add Category**
+- Stricted for Admin use only.
+- Page features a single line form allowing Admin user to add new categories.
+- After submission Add category function checks if Category already exits, if it does, it shows a message to Admin user that category already exits.
+
+**Edit Category**
+- Stricted for Admin use only.
+- Page features a single line form allowing Admin user to edit the selected category.
+- After submission Edit Category function checks if Category already exits, if it does, it shows a message to Admin user that category already exits.
+
+**404 Error Page**
+- Page features custom error message with a button that takes user back to the homepage
+
+**500 Error Page**
+- Page features custom error message with a button that takes user back to the homepage
 
 
 ### Features Left to Implement
@@ -150,44 +222,44 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
 - [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 - [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
-   
+
 
 ### Frameworks, Libraries, and Programs Used
 
 - [Visiual Studio Code ](https://code.visualstudio.com)
-    - **Vscode** Is the code editor used to develop, commit & push this project to Github.    
+    - **Vscode** Is the code editor used to develop, commit & push this project to Github.
 - [GitHub](https://github.com/)
-    - **Github** is used for: 
+    - **Github** is used for:
     1. Tracking the project, and for version control.
     2. As a repository for other users to see the code used in the project.
     3. Deploying the final version of the project for live view. The deployed version can be viewed [here](https://wonderdam.herokuapp.com/homepage).
 - [Bootstrap](https://www.bootstrapcdn.com/)
-    - **Bootstrap**  to structure the website, and to achieve responsive layout across various mobile devices.      
+    - **Bootstrap**  to structure the website, and to achieve responsive layout across various mobile devices.
 - [JQuery](https://jquery.com)
     - **JQuery**  used with Bootstrap.
 - [MongoDB](https://www.mongodb.com/)
      - **MongoDB**  Source-available cross-platform document-oriented database program.
 - [WOW.js](https://wowjs.uk)
-    - **WOW.js**  a JavaScript plugin that reveals animations when you scroll. 
+    - **WOW.js**  a JavaScript plugin that reveals animations when you scroll.
 - [Animate.css](https://animate.style)
     - **Animate.css**  a cross-browser library of CSS animations.
 - [Adobe Fonts](https://fonts.adobe.com/)
     - **Adobe Fonts**  for importing typography.
-- [Font Awesome](https://fontawesome.com/) 
+- [Font Awesome](https://fontawesome.com/)
    - **Font Awesome** for adding a icons.
 - [W3C Markup Validator](https://validator.w3.org/)
-   - **W3C Markup Validator** to check validity of HTML code.   
+   - **W3C Markup Validator** to check validity of HTML code.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
    - **W3C CSS Validator** to check validity of CSS code.
 - [JSHint Javascript Code Quality Tool](https://jshint.com/)
    - **JSHint Javascript Code Quality Tool** to check the quality of the Javascript code.
 - [Balsamiq:](https://balsamiq.com/)
-    - **Balsamiq** was used for creating [wireframes]() during the design process. 
+    - **Balsamiq** was used for creating [wireframes]() during the design process.
 
 
 
 
-## Testing 
+## Testing
 
 
 
@@ -199,7 +271,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 #### Returning Visitor Goals
 
- 
+
 
 #### Frequent User Goals
 
@@ -215,7 +287,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 <img src="" alt="lighthouse-desktop" width="500" height="170">
 
-- Mobile: 
+- Mobile:
 
 <img src="" alt="lighthouse-mobile" width="500" height="180">
 
@@ -230,13 +302,13 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
     - Selected **yigitaksoy/Wonderdam** from the list of repositories.
     - Selected **Settings** within the repository.
     - Scrolled down to **Github Pages**, and changed **source** to **master branch**.
-    - The page automatically deployed. 
+    - The page automatically deployed.
 
 - To add this repository to your local workspace:
     - Click on the [Wonderdam repository on GitHub](https://github.com/yigitaksoy/Wonderdam) link.
     - Click on the **Code** button, and copy the URL.
-    - Go into your local workspace, and open up a new terminal. 
-    - Type `git clone ` and paste the URL you copied from GitHub, and press enter. It should look like this: 
+    - Go into your local workspace, and open up a new terminal.
+    - Type `git clone ` and paste the URL you copied from GitHub, and press enter. It should look like this:
 ```console
 git clone https://github.com/*username*/*repository*
 ```
@@ -274,4 +346,4 @@ The process of cloning is now completed. For further information on cloning,
 - All content on the website, including images and text, are used for educational purposes only.
 
 ## Miscellaneous
-- During the early development stages of the project, delete modal title was updated on User Profile page, but due to long hours of coding this commit was mis-stated as "Update delete modal title on post page" which was meant for Profile Page. [See commit](https://github.com/yigitaksoy/Wonderdam/commit/a0547907ea744e8d0e4447f9a7611a32a2c425dd) 
+- During the early development stages of the project, delete modal title was updated on User Profile page, but due to long hours of coding this commit was mis-stated as "Update delete modal title on post page" which was meant for Profile Page. [See commit](https://github.com/yigitaksoy/Wonderdam/commit/a0547907ea744e8d0e4447f9a7611a32a2c425dd)

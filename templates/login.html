@@ -10,14 +10,14 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-input" name="username" id="username" placeholder="Username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" 
-                    oninvalid="this.setCustomValidity('Please enter at least 5 letters or numbers, and no special characters')" oninput="this.setCustomValidity('')" type="text" required/>
-                    <small id="min-count" class="form-text text-muted ms-auto">Usernames must contain 5 - 15 letters or numbers, and no special characters.</small>
+                    oninvalid="this.setCustomValidity('Please enter at least 5 letters or numbers, and no special characters')" oninput="this.setCustomValidity('')" required/>
+                    <small class="min-count form-text text-muted ms-auto">Usernames must contain 5 - 15 letters or numbers, and no special characters.</small>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-input" name="password" id="password" placeholder="Password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9!£%~#$%&()*+,-./?@^_~]{5,15}$" 
                     oninvalid="this.setCustomValidity('Please enter 5 - 15 characters')" oninput="this.setCustomValidity('')" required/>
-                    <small id="min-count" class="form-text text-muted ms-auto">Passwords must be 5 - 15 characters.</small>
+                    <small class="min-count form-text text-muted ms-auto">Passwords must be 5 - 15 characters.</small>
                 </div>
                 <div class="form-group text-center">
                     <input type="submit" name="submit" id="submit" class="form-submit" value="Log in"/>

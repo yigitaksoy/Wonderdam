@@ -122,6 +122,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - [Profile Page for New User](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20New%20User.png)
 - [Profile Page without Posts](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20user%20without%20posts.png)
 - [Profile Page with Posts](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Profile%20with%20posts.png)
+- [Admin Profile Page](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Admin%20Profile%20Page.png)
 - [Add Post](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Add%20Post.png)
 - [Edit Post](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Edit%20Post.png)
 - [Add Category](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/wireframes/Add%20Category.png)

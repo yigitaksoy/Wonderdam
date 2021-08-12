@@ -323,7 +323,7 @@ def add_post():
             }
             if existing_post:
                 flash("Post already exists")
-                return render_template("add_post.html")
+                return redirect(url_for("add_post"))
             mongo.db.posts.insert_one(post)
             flash("You've successfully posted!")
             return redirect(url_for("homepage"))

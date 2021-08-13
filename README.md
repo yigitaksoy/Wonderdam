@@ -158,12 +158,13 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - For Admin user all the posts feature a Delete and Edit button, allowing Admin user to easily Edit or Delete Unwanted user posts directly from the Homepage.
 
  **Register Page**
-- Features a clean registration for user to signup for the blog.
+- Features a clean registration form for user to signup for the blog.
 - Each section of form input area features a placeholder text.
 - Underneath the form inputs, there is a placeholder text explaining the required data for input, helping users to easily match the requested format.
+- Password input field features a password match validator and gives feedback to user if their passwords match. 
 
  **Login Page**
-- Features a clean form for users to login to their blog.
+- Features a clean login form for users to login to their blog.
 - Each section of form input area features a placeholder text.
 - Underneath the form inputs, there is a placeholder text explaining the required data for input, helping users to easily match the requested format.
 - Upon succcessful submission, user is redirected to their own profile page.

@@ -182,7 +182,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Page features a clean form for users to use, outlining all the required information in the form.
 - Form features an image preview section allowing users to see their post images before uploading.
 - Using file upload, and Cloudinary service, form allows users to easily upload their image to the cloud, and eliminates the hassle of looking for image urls.
-- File upload function allows user to only upload image files such as jpeg, jpg, and png. Any other file extensions are restricted.
+- File upload input allows user to only upload image files such as jpeg, jpg, and png. Any other file extensions are restricted.
 - After submission, form checks if the current Post title exits in the database, restricting users from adding duplicate posts.
 - Upon successful post, user get redirected to the homepage and greeted with a success message.
 
@@ -199,7 +199,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Underneath the title post information such as Author, Post Date, Category, and Address information is presented to the users. For post authors and admin an Edit and Delete button is presented allowing author or Admin user to easily manage the post.
 - Underneath the info tags Post image is shown to the user.
 - Underneath the post image, post content is presented.
-- Underneath the post content a link for the place's that opens the website in a new tab is presented for users to get more information about the place.
+- Underneath the post content, a link for the place's website is present, which opens the website in a new tab for users to get more information about the place.
 
 **Contact Page**
 - Allowed for all visitors and users of the blog.

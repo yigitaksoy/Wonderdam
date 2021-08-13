@@ -336,7 +336,7 @@ The process of cloning is now completed. For further information on cloning,
  visit [How to clone from GitHub](https://help.github.com/en/articles/cloning-a-repository).
 ### MongoDB Configuration
 
-- Login to your MongoDB Account. 
+- Login to your [MongoDB](https://www.mongodb.com) Account. 
 - From `Clusters` tab, click on `Connect`
 - Select `Connect to your application`
 - Select `Python` as `Driver` and choose `Version 3.6 or later`
@@ -362,7 +362,7 @@ pip3 freeze --local > requirements.txt
 ``` 
 - Create a Procfile by running the following command in the CLI:
 ```console
-`echo web: python run.py > Procfile
+echo web: python run.py > Procfile
 ```
 - Log in to [Heroku](https://www.heroku.com/)
 - Select `New` on your dashboard and then select `Create new app`

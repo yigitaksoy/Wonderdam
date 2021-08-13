@@ -235,7 +235,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Maps section showing each place on a map.
 - Registration confirmation allowing each new user to verify their account before adding new posts.
 - Comments functionality allowing users to comment on the posts.
-- User profile picture functionality, allowing users to add profile pictures, and show them next to the authors, and comments on each post.
+- User profile picture functionality, allowing users to add profile pictures, and show them next to their posts, and comments.
 - Email notification functionality for Admin user to be alerted when a new post is added to the blog.
 
 ## Technologies Used

@@ -320,14 +320,11 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ## Deployment
 
-- To view the deployed version of [Wonderdam](..) I took the following steps:
-    - Logged on to [GitHub](https://github.com/).
-    - Selected **yigitaksoy/Wonderdam** from the list of repositories.
-    - Selected **Settings** within the repository.
-    - Scrolled down to **Github Pages**, and changed **source** to **master branch**.
-    - The page automatically deployed.
+- To view the deployed version of [Wonderdam](https://wonderdam.herokuapp.com) Please take the following steps:
 
-- To add this repository to your local workspace:
+### Github
+
+- Add this repository to your local workspace:
     - Click on the [Wonderdam repository on GitHub](https://github.com/yigitaksoy/Wonderdam) link.
     - Click on the **Code** button, and copy the URL.
     - Go into your local workspace, and open up a new terminal.
@@ -337,7 +334,46 @@ git clone https://github.com/*username*/*repository*
 ```
 The process of cloning is now completed. For further information on cloning,
  visit [How to clone from GitHub](https://help.github.com/en/articles/cloning-a-repository).
+### MongoDB Configuration
 
+- Login to your MongoDB Account. 
+- From `Clusters` tab, click on `Connect`
+- Select `Connect to your application`
+- Select `Python` as `Driver` and choose `Version 3.6 or later`
+- Create a new `env.py` file in your project, paste and save the connection link and variables.
+ ```console
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "<secret_key>")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://<username>:<password>@myfirstcluster.8s17w.mongodb.net/<db_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "<db_name>")
+````
+- Create an instance of PyMongo
+```console
+mongo = PyMongo(app)
+```
+
+### Heroku Deployment
+- Before deploying your project create a requirements.txt by running the following command in the CLI:
+```console
+pip3 freeze --local > requirements.txt
+``` 
+- Create a Procfile by running the following command in the CLI:
+```console
+`echo web: python run.py > Procfile
+```
+- Log in to [Heroku](https://www.heroku.com/)
+- Select `New` on your dashboard and then select `Create new app`
+- Choose a name for your application, select your region, and then click `Create app`
+- From the app dashboard, navigate to `Deploy` tab. 
+- From `Deployment method` Click on `Github` and click `Search` then select your repository name. 
+- Once you select your repository, click on `Connect`
+- After you conntect to your repository, click on `Settings` tab on your app dashboard, and click on `Reveal Config Vars` and add your configuration variables to Heroku.
+- Navigate to `Deploy` tab, and from `Manual deploy` choose your master branch, and click `Deploy Branch`
+- After you deploy your branch `Enable Automatic Deploys`.
+- Site is successfully deployed, and any futher changes on the app will automatically be updated everytime they are commited and pushed on Github.
 
 
 ## Credits

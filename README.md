@@ -252,13 +252,14 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
     - **Github** is used for:
     1. Tracking the project, and for version control.
     2. As a repository for other users to see the code used in the project.
-    3. Deploying the final version of the project for live view. The deployed version can be viewed [here](https://wonderdam.herokuapp.com/homepage).
 - [Bootstrap](https://www.bootstrapcdn.com/)
     - **Bootstrap**  to structure the website, and to achieve responsive layout across various mobile devices.
 - [JQuery](https://jquery.com)
     - **JQuery**  used with Bootstrap.
 - [MongoDB](https://www.mongodb.com/)
      - **MongoDB**  Source-available cross-platform document-oriented database program.
+- [Heroku](https://www.heroku.com/)
+     - **Heroku**  A platform as a service (PaaS) used for deploying the project.
 - [WOW.js](https://wowjs.uk)
     - **WOW.js**  a JavaScript plugin that reveals animations when you scroll.
 - [Animate.css](https://animate.style)
@@ -269,6 +270,8 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
    - **Font Awesome** for adding a icons.
 - [W3C Markup Validator](https://validator.w3.org/)
    - **W3C Markup Validator** to check validity of HTML code.
+- [PEP8 Online](http://www.pep8online.com/)
+   - **PEP8 Validator** to check Python code for PEP8 requirements.
 - [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
    - **W3C CSS Validator** to check validity of CSS code.
 - [JSHint Javascript Code Quality Tool](https://jshint.com/)

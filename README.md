@@ -356,11 +356,11 @@ mongo = PyMongo(app)
 ```
 
 ### Heroku Deployment
-- Before deploying your project create a requirements.txt by running the following command in the CLI:
+- Before deploying your project create a requirements.txt file by running the following command in the CLI:
 ```console
 pip3 freeze --local > requirements.txt
 ``` 
-- Create a Procfile by running the following command in the CLI:
+- Create a Procfile file by running the following command in the CLI:
 ```console
 echo web: python run.py > Procfile
 ```

@@ -40,15 +40,17 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 
 4. [**Testing**](#testing)
 
-5. [**Deployment**](#deployment)
+5. [**Database**](#database)
 
-6. [**Credits**](#credits)
+6. [**Deployment**](#deployment)
+
+7. [**Credits**](#credits)
     - [**Contents**](#contents)
     - [**Media**](#media)
     - [**Codes**](#codes)
     - [**Acknowledgements**](#acknowledgements)
 
-7. [**Disclaimer**](#disclaimer)
+8. [**Disclaimer**](#disclaimer)
 
 
 
@@ -316,7 +318,44 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ### Debugging
 
+## Database
 
+- [MongoDB](https://www.mongodb.com) was used to create a database for this application.
+
+<img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/Database.png">
+
+### Users collection
+
+|Key|Type|
+|---|----|
+|_id|ObjectId|
+|name|String|
+|last_name|String|
+|username|String|
+|password|String|
+|email|String|
+|registered|datetime|
+
+### Posts Collection
+
+|Key|Type|
+|---|----|
+|_id|ObjectId|
+|post_title|String|
+|post_category|String|
+|post_content|String|
+|post_image|String|
+|post_address|String|
+|website|String|
+|author|String|
+|post_date|datetime|
+
+### Categories Collection
+
+|Key|Type|
+|---|----|
+|_id|ObjectId|
+|category_name|String|
 
 ## Deployment
 

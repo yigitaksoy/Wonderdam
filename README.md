@@ -173,6 +173,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Features a clean layout.
 - Shows a greeting message to the User upon successful login.
 - Features a section showing all the posts by the user, allowing them to edit or delete their posts.
+- Features a add post button allowing users to easily reach to add post page from their profile.
 - If user has no posts, then a message is presented to the user, asking them if they would like to add a new post.
 - At the bottom of the page there is a "Delete Account" button featuring a modal for user confirmation.
 

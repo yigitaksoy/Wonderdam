@@ -157,5 +157,12 @@
 
 </details>
 
+<details><summary><b>Click here for CSS Validator results</b></summary>
+
+- __CSS Validator Results__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/css-validator-results/css-validator-resuls.png" >
+</p>
+</details>
 
 ### Further Manual Testing

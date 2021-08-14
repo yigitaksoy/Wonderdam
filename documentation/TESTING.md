@@ -161,7 +161,7 @@
 
 - __CSS Validator Results__
 <p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/css-validator-results/css-validator-resuls.png" >
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/css-validator-results/css-validator-results.png" >
 </p>
 </details>
 

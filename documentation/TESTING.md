@@ -86,4 +86,7 @@
 
 ### Testing
 
+- The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML & CSS code in the project to ensure there were no syntax errors. JSHint was used to check the quality of the Javascript and PEP8 Online was used for checking the python code.
+
+
 ### Further Manual Testing

@@ -20,8 +20,8 @@
     - [**Admin User Goals**](#admin-user-goals)
 
 2. [**Testing**](#testing)
-    - [**W3C Markup Validator Results](#html-validator-results)
-    - [**W3C CSS Validator Results](#html-validator-results)
+    - [**W3C Markup Validator Results**](#html-validator-results)
+    - [**W3C CSS Validator Results**](#html-validator-results)
     - [**JSHint Results**](#jshint-results)
     - [**PEP8 Online Validator Results**](#pep8-validator-results)
 

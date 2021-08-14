@@ -50,7 +50,20 @@
 
 #### Registered Visitor Goals
 
-
+* I want to find out how I can login to my profile.
+    - On the navigation bar, right next to Register tab, Login link is presented for registered users, which takes them to Login page.
+* I want to find out how I can add a new post.
+    - For registered users, Add new post link is presented on their profile page, as well on the Navigation bar.
+* I want to find out how I can edit my posts.
+    - For post authors, Edit post links are present on their Profile page, on Homepage on top of their posts, as well as Blog post page.
+* I want to find out how I can delete my posts.
+    - For post authors, Delete post links are present on their Profile page, on Homepage on top of their posts, as well as Blog post page.
+* I want to find be able to see all my posts.
+    - On Registered user's Profile page, a section that shows users all the posts is present which makes it easy for users to easily see and manage their posts.
+* I want to find out how i can search through all the current posts, and categories.
+    - On the navigation bar, there is a search bar present, which lets users to easily search for current posts, and categories.
+* I want to find out how to delete my blog account.
+    - On Registered users Profile page, at the bottom a Delete Account button is present for registered users to easily delete their account.
 
 #### Admin User Goals
 

@@ -165,4 +165,12 @@
 </p>
 </details>
 
+<details><summary><b>Click here for JSHint results</b></summary>
+
+- __JSHint Results__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/jshint-results/jshint-results.png" >
+</p>
+</details>
+
 ### Further Manual Testing

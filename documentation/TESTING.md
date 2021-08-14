@@ -88,5 +88,74 @@
 
 - The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML & CSS code in the project to ensure there were no syntax errors. JSHint was used to check the quality of the Javascript and PEP8 Online was used for checking the python code.
 
+<details><summary><b>Click here for HTML Validator results</b></summary>
+
+- __Homepage__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/homepage-validator-result.png" >
+</p>
+
+- __Login__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/login-validator-result.png" >
+</p>
+
+- __Register__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/register-validator-result.png" >
+</p>
+
+- __Contact__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/contact-validator-result.png" >
+</p>
+
+- __Profile__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/profile-validator-result.png" >
+</p>
+
+- __Add Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/add-post-validator-result.png" >
+</p>
+
+- __Blog Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/blog-post-validator-result.png" >
+</p>
+
+- __Edit Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/edit-post-validator-result.png" >
+</p>
+
+- __Admin Dashboard__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/dashboard-validator-result.png" >
+</p>
+
+- __Add Category__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/add-category-validator-result.png" >
+</p>
+
+- __Edit Category__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/edit-category-validator-result.png" >
+</p>
+
+- __Error 404__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/error-404-validator-result.png" >
+</p>
+
+- __Error 500__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/error-500-validator-result.png" >
+</p>
+
+</details>
+
 
 ### Further Manual Testing

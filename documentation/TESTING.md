@@ -112,7 +112,7 @@
 
 - __Profile__
 <p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/profile-validator-result.png" >
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/profile-validator-results.png" >
 </p>
 
 - __Add Post__
@@ -122,7 +122,7 @@
 
 - __Blog Post__
 <p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/blog-post-validator-result.png" >
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/blog-post-validator-results.png" >
 </p>
 
 - __Edit Post__
@@ -137,12 +137,12 @@
 
 - __Add Category__
 <p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/add-category-validator-result.png" >
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/add-category-validator-results.png" >
 </p>
 
 - __Edit Category__
 <p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/edit-category-validator-result.png" >
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/edit-category-validator-results.png" >
 </p>
 
 - __Error 404__

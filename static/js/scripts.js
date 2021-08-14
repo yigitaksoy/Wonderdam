@@ -7,7 +7,8 @@ wow = new WOW(
   mobile:       true,       
   live:         true      
     }
-)
+);
+
 wow.init();
 
 // Change post-tag color depending on Category

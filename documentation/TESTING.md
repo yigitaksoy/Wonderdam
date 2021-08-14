@@ -67,6 +67,22 @@
 
 #### Admin User Goals
 
+* I want to be able to add new posts.
+    - On the Admin user Profile page and on Admin Dashboard a Add new post button, and on the navigation bar a New Post link is present, which helps Admin user to easily add new posts to the blog.
+* I want to be able to edit user posts.
+    - Admin user has exclusive rights therefore on Admin Dashboard and on top of every post an Edit button is present for Admin user to easily edit user posts.
+* I want to be able to delete user posts.
+    - Admin user has exclusive rights therefore on Admin Dashboard and on top of every post a Delete button is present for Admin user to easily delete user posts.
+* I want to be able to delete unwanted users from the blog.
+    - Admin user has exclusive rights therefore on Admin Dashboard a responsive registered users table is present, allowing admin user to delete unwanted users from the blog.
+* I want to be able to manage add/edit/delete categories.
+    - On Admin dashboard there is a section listing all the current categories for Admin user, allowing Admin to easily Add/Edit/Delete catagories.
+* I want to find out how many posts are currently on the blog.
+    - On Admin dashboard, on top of the page info cards are present allowing admin user to see real-time information of Blog post data.
+* I want to find out how many categories are currently on the blog.
+    - On Admin dashboard, on top of the page info cards are present allowing admin user to see real-time information of Blog category data.
+* I want to find out how many users are currently registered on the blog.
+    - On Admin dashboard, right underneath blog info cards, a responsive registered users table is present allowing Admin user to get detailed information about all the registered users on the blog.
 
 ### Testing
 

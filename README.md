@@ -288,37 +288,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ## Testing
 
-
-
-### Testing User Stories from UX Design Section
-
-#### First Time Visitor Goals
-
-
-
-#### Returning Visitor Goals
-
-
-
-#### Frequent User Goals
-
-
-
-### Further Manual Testing
-
-
-
-#### Google Lighthouse scores:
-
-- Desktop:
-
-<img src="" alt="lighthouse-desktop" width="500" height="170">
-
-- Mobile:
-
-<img src="" alt="lighthouse-mobile" width="500" height="180">
-
-### Debugging
+Testing information can be found in seperate a [TESTING.md](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/TESTING.md) file.
 
 ## Database
 

@@ -173,4 +173,12 @@
 </p>
 </details>
 
+<details><summary><b>PEP8 Online results</b></summary>
+
+- __JSHint Results__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/pep8-results/pep8-compliance.png" >
+</p>
+</details>
+
 ### Further Manual Testing

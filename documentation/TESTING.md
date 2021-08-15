@@ -11,7 +11,9 @@
 
 </div>
 
-
+<br>
+Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blob/master/README.md) file for more information about the project.
+<br>
 ## Contents Table
 
 1. [**Testing User Stories from UX Design Section**](#user-stories)

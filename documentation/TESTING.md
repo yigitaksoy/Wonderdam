@@ -165,7 +165,11 @@
   
 * **I want to be able to see real-time information about the blog, such as current number of posts, users, and categories**
     - On Admin dashboard, on top of the page, info cards are present allowing admin user to see real-time information of Blog post category and user data.
-
+    
+  <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/dashboard-info-cards">
+  </div>
+  <br>
 ### Testing
 
 - The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML & CSS code in the project to ensure there were no syntax errors. JSHint was used to check the quality of the Javascript and PEP8 Online was used for checking the python code.

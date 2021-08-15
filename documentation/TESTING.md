@@ -89,8 +89,14 @@
     
 * I want to find be able to see all my posts.
     - On Registered user's Profile page, a section that shows users all the posts is present which makes it easy for users to easily see and manage their posts.
+  <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/profile.gif" width="700">
+  </div>
 * I want to find out how i can search through all the current posts, and categories.
     - On the navigation bar, there is a search bar present, which lets users to easily search for current posts, and categories.
+    <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/search-post--and-categories.gif" width="700">
+  </div>
 * I want to find out how to delete my blog account.
     - On Registered users Profile page, at the bottom a Delete Account button is present for registered users to easily delete their account.
     

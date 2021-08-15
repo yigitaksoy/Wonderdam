@@ -92,6 +92,10 @@ a h2:hover{
   -webkit-transition:.3s;
 }
 
+.badge {
+  font-weight: 500;
+}
+
 /*  Pagination */
 
 .pagination {
@@ -323,6 +327,7 @@ a h2:hover{
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;  
   overflow: hidden;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {
@@ -545,12 +550,12 @@ transition: color .9s ease;
 
 .post-tag span {
   font-family: paralucent, sans-serif;
-  font-weight: 600;
   text-transform: uppercase;
 }
 
 .post-page-content {
   margin-top: 2rem;
+  font-weight: 600;
 }
 
 .post-img-container {

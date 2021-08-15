@@ -167,7 +167,7 @@
     - On Admin dashboard, on top of the page, info cards are present allowing admin user to see real-time information of Blog post category and user data.
     
   <div align="center">
-    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/dashboard-info-cards">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/dashboard-info-cards.png">
   </div>
   <br>
 ### Testing

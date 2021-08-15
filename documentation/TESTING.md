@@ -163,12 +163,8 @@
   </div>
   <br>
   
-* **I want to find out how many posts are currently on the blog.**
-    - On Admin dashboard, on top of the page info cards are present allowing admin user to see real-time information of Blog post data.
-* **I want to find out how many categories are currently on the blog.**
-    - On Admin dashboard, on top of the page info cards are present allowing admin user to see real-time information of Blog category data.
-* **I want to find out how many users are currently registered on the blog.**
-    - On Admin dashboard, right underneath blog info cards, a responsive registered users table is present allowing Admin user to get detailed information about all the registered users on the blog.
+* **I want to be able to see real-time information about the blog, such as current number of posts, users, and categories**
+    - On Admin dashboard, on top of the page, info cards are present allowing admin user to see real-time information of Blog post category and user data.
 
 ### Testing
 

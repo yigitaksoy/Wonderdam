@@ -85,9 +85,7 @@ The website is fully interactive, built with mobile-first design in mind, and ac
 - I want to be able to delete user posts.
 - I want to be able to delete unwanted users from the blog.
 - I want to be able to manage add/edit/delete categories.
-- I want to find out how many posts are currently on the blog.
-- I want to find out how many categories are currently on the blog.
-- I want to find out how many users are currently registered on the blog.
+- I want to be able to see real-time information about the blog, such as current number of posts, users, and categories.
 
 
 ## Strategy

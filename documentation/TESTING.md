@@ -63,7 +63,7 @@
     - On the navigation bar, right next to Register tab, Login link is presented for registered users, which takes them to Login page.
     
   <div align="center">
-    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/login.gif" width="700">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/login-to-site.gif" width="700">
   </div>
   
 * I want to find out how I can add a new post.

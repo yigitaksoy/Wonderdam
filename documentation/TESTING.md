@@ -41,10 +41,19 @@
     - At the top of the page a sticky navigation bar is present, displaying all the links for new users to easily navigate through the website.
 * I want to find out how I can register to the website, and upload a post.
     - On the navigation bar, right next to the Home link, Register link is presented for new users which leads them to the registration page. 
+  <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/register.gif" width="700">
+  </div>
 * I want to find out how I can search for posts.
     - On the navigation bar, at the right end side, there is a search bar present for users to easily search for posts.
+  <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/search.gif" width="700">
+  </div>
 * I want to be able to find out how I contact the blog owner.
     - On the navigation bar next to Login link, Contact link is present which takes users to the Contact form where users can easily contact the Blog Admin.
+  <div align="center">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/contact.gif" width="700">
+  </div>
 
 
 

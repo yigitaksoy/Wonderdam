@@ -131,7 +131,7 @@
 * I want to be able to manage add/edit/delete categories.
     - On Admin dashboard there is a section listing all the current categories for Admin user, allowing Admin to easily Add/Edit/Delete catagories.
   <div align="center">
-    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/admin-manage-categories.gif" width="700">
+    <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/images/user-testing-videos/admin-manage-catagories.gif" width="700">
   </div>
   <br>
 * I want to find out how many posts are currently on the blog.

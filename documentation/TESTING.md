@@ -273,7 +273,7 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
 
 ### Further Manual Testing
 
-#### Responsive Design 
+#### Responsive Design - PASS
 
 - All pages were tested locally, and on Heroku using Chrome, Firefox, IE, and Safari. 
 - All pages tested for responsiveness in different device sizes using Google Chrome Developer Tools, and Google Chrome Responsive Viewer extension;
@@ -389,3 +389,14 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
   
   - Footer is present on all pages. 
   - Social links on the footer works as expected, and all the links open in a new tab. 
+  
+  #### Error 404 - PASS
+  
+  - Works as expected, successfuly captures and handles page not found error.
+  - Go back button on error page works as expected and redirects user back to the homepage.
+  
+  #### Error 500 - PASS
+  
+  - Works as expected, successfuly captures and handles internal server error.
+  - Go back button on error page works as expected and redirects user back to the homepage.
+  

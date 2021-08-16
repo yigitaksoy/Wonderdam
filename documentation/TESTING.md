@@ -28,6 +28,7 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
     - [**W3C CSS Validator Results**](#html-validator-results)
     - [**JSHint Results**](#jshint-results)
     - [**PEP8 Online Validator Results**](#pep8-validator-results)
+    - [**Debugging**](#debugging)
 
 3. [**Further Manual Testing**](#further-manual-testing)
 
@@ -277,6 +278,18 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
 </p>
 </details>
 
+### Debugging
+
+- During the early development stages of the project, Images that are requested from Cloudinary were highlighted in the console as `Mixed Content` on Homepage, as well as on Blog Post page. This issue was caused by Cloudinary images being served on an insecure HTTP connection. In order to fix this issue 
+```console
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+```
+meta tag was added into the base template, and issue was resolved. [Please see commit](https://github.com/yigitaksoy/Wonderdam/commit/c04907a47d7e6d2b60b26887046aa0ac16337b3f#diff-690b81fad8df2a1f1ce37c846641d9247e3472d244f17039d2910a5ed0c98d5e). For more information about what mixed content is, please refer to [Web.dev](https://web.dev/what-is-mixed-content/)
+
+- During the testing stages of the project, Flask wasn't handling the 404 and 500 errors correctly, resulting in `key error: user` error. This issue was caused by Flask itself, and was also related to the if statement checking if user was in session. To resolve this issue, if statement was updated to:
+```console
+if session.get('user') is None:
+```
 ### Further Manual Testing
 
 #### Responsive Design - PASS

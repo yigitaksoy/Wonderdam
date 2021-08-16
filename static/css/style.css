@@ -283,7 +283,7 @@ a h2:hover{
 }
 
 .post h2 {
-  font-size: 4rem;
+  font-size: 3.8rem;
   z-index: 3;
 }
 
@@ -328,7 +328,7 @@ a h2:hover{
 
 @media (max-width: 1280px) {
   .post h2 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 }
 

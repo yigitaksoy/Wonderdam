@@ -306,7 +306,7 @@ if session.get('user') is None:
   - iPad Air 2 
   - iPad Pro 3
   
-#### Functionality Testing
+### Functionality Testing
   
   #### Navbar - PASS
   
@@ -433,7 +433,7 @@ if session.get('user') is None:
   - Tested restrictions against users trying to delete a Category - **Restricted Access / PASS**
   - Tested restrictions against users trying to access Admin Dashboard - **Restricted Access / PASS**
   
-  #### Google Lighthouse Testing 
+  ### Google Lighthouse Testing 
   
   - All pages were tested for web quality using Google's Lighthouse.
   

@@ -272,3 +272,120 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
 </details>
 
 ### Further Manual Testing
+
+#### Responsive Design 
+
+- All pages were tested locally, and on Heroku using Chrome, Firefox, IE, and Safari. 
+- All pages tested for responsiveness in different device sizes using Google Chrome Developer Tools, and Google Chrome Responsive Viewer extension;
+  - Desktop 
+  - iPhone 5/6/7/8/X 
+  - iPad 1/2/3/Pro 
+  - Galaxy Android phones
+- All the pages were also tested manually using;
+  - iPhone 5s/6s/8/X/XS/11/
+  - Samsung Galaxy S8/Note 10+
+  - iPad Air 2 
+  - iPad Pro 3
+  
+#### Functionality Testing
+  
+  #### Navbar - PASS
+  
+  - All links are working, and takes the user where they want to go.
+  - Search bar is working, and lets user search through posts, users, and categories. If user input doesnt match any results, "No results found" message is shown"
+  - Search results pagination works perfectly, and gives feedback depending on the search results. 
+  
+  #### Homepage - PASS
+  
+  - All posts and transitions work as expected.
+  - All post images, titles, and read more links work as expected and takes the user to the post page.
+  - All edit, and delete buttons on top of posts work as expected, enables post author or admin user to edit and delete posts.
+  - Edit and Delete buttons are hidden if user isnt the author of the post or the admin user.
+  - Pagination works as expected, and only shows 5 posts per page. 
+  
+  #### Register - PASS
+  
+  - Form inputs work as expected and stores the data in the database.
+  - Form validations work as expected, and gives feedback upon unmatched format or existing username.
+  - Password match validator works as expected and gives real-time information about matching data. 
+  - Submit button works as expected and submits data successfully, and redirects new user to their profile page.
+  
+  #### Login - PASS
+  
+  - Form inputs works perfectly, and form validations work as expected and gives feedback upon unmatched format or incorrect username and password, or if user doesnt exist in the database.
+  - Submit button works as expected and submits data successfully, and redirects user to their profile page upon successful entry.
+  
+  #### Logout - PASS
+  
+  - Logout functionality works perfectly, logs out user, and removes session cookies.
+  
+  #### Profile - PASS
+  
+  - All posts by the current user are displayed in post cards, and all post images fit perfectly inside the cards.
+  - Add post button works as expected and redirects user to Add Post form.
+  - If current user doesn't have any posts, "Would you like to add a post" text along with Add post button is shown.
+  - All the edit delete buttons on post cards work perfectly and allows user to easily manage their posts. 
+  - Delete User account button works as expected and deletes user from the database, logs out user, and removes them from the session cookies.
+  
+  #### Add Post - PASS
+  
+  - All form inputs work perfectly, and stores the required data into the database.
+  - Character count function works perfectly, and gives real-time feed back upon typing in the text area, allowing users to match the requested charachter count for posts.
+  - Post image preview section on the form works perfectly, and shows user their image before upload. Preview image function on the form is responsive and all images fit perfectly on all devices sizes.
+  - File upload input on the form works as expected, restircts user to choose only allowed image extenstions, and uploads image to Cloudinary upon successful submission. 
+  - Add post button works perfectly and submits data upon successfull submission.
+  - Form validates if current Post title already exists. 
+  
+  #### Edit Post - PASS
+  
+  - All form inputs work perfectly, and updates the required data in the database.
+  - All input fields are pre-filled with the information from the add post form, allowing users to easily edit their content.
+  - Character count function works perfectly, and gives real-time feed back upon typing in the text area, allowing users to match the requested charachter count for posts.
+  - Post image preview section on the form works perfectly, and shows user their image before upload. Preview image function on the form is responsive and all images fit perfectly on all devices sizes.
+  - File upload input on the form works as expected, restircts user to choose only allowed image extenstions, and uploads image to Cloudinary upon successful submission. 
+  - Add post button works perfectly and submits data upon successfull submission.
+  - Form validates if current Post title already exists. 
+  
+  #### Post Page - PASS
+  
+  - Successfully renders all the data including the post image. 
+  - Edit and Delete button on top of the post for the post author, and admin user works perfectly and allows them to delete or edit the data. 
+  - Post website data renders perfectly as an external link underneath the post content, and opens the page in a new tab.
+  
+  #### Admin Dashboard - PASS
+  
+  - All post info cards show real-time data, and work as exptected.
+  - Registered users table works as expected listing all the users and their data.
+  - Delete user button on the Registered user table works as expected and deletes the user upon confirmation.
+  - Categories section works as expected, and shows all the current categories along with their Edit and Delete buttons for Admin user to easily manage.
+  - Edit Category button works as expected and redirects Admin user to Edit Category Form. 
+  - Delete Category button works as expected and deletes the category upon confirmation.
+  - Add category button works as expected and redirects Admin user to add category form. 
+  - Recent Posts section works as expected and shows all the current posts on the blog, along with their post images, and Edit - Delete buttons. 
+  - Edit buttons on recent posts cards works perfectly and allows admin user to edit any post they want.
+  - Delete button on recent posts cards works perfectly and allows admin user to delete any post upon confirmation.
+  - Add post button on Dashboard works perfectly and redirects admin user to Add post form to add new posts. 
+  
+  #### Add Category - PASS
+  
+  - All form inputs work perfectly, and gives feedback upon successful submission.
+  - Form gives feedback if matching category already exists. 
+  - Add Category button works as expected, and submits data upon successful submission. 
+  
+  #### Edit Category - PASS 
+  
+  - Form successfully requests current category data from database. 
+  - All form inputs work perfectly, and gives feedback upon successful submission.
+  - Form gives feedback if matching category already exists. 
+  - Add Category button works as expected, and submits data upon successful submission. 
+  
+  #### Contact - PASS
+  
+  - All inputs work as expected and validates user information before submission. 
+  - Send button works as expected and submits data as expected.
+  - Form is fully functional and sends email to the Admin user upon successfull submission.
+  
+  #### Footer - PASS
+  
+  - Footer is present on all pages. 
+  - Social links on the footer works as expected, and all the links open in a new tab. 

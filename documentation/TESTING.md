@@ -419,6 +419,20 @@ if session.get('user') is None:
   - Works as expected, successfuly captures and handles internal server error.
   - Go back button on error page works as expected and redirects user back to the homepage.
   
+  
+  ### Security Testing
+  
+  - Tested restrictions against users adding a post without signing in -  **Restricted Access / PASS**
+  - Tested restrictions against users editing a post without signing in -  **Restricted Access / PASS**
+  - Tested restrictions against users seeing other users Profiles without signing-in - **Restricted Access / PASS**
+  - Tested restrictions against users seeing other users Profiles when signed-in - **Restricted Access / PASS**
+  - Tested restrictions against users deleting other users' accounts - **Restricted Access / PASS**
+  - Tested restrictions against users trying to delete Admin user - **Restricted Access / PASS**
+  - Tested restrictions against users trying to add a Category - **Restricted Access / PASS**
+  - Tested restrictions against users trying to edit a Category - **Restricted Access / PASS**
+  - Tested restrictions against users trying to delete a Category - **Restricted Access / PASS**
+  - Tested restrictions against users trying to access Admin Dashboard - **Restricted Access / PASS**
+  
   #### Google Lighthouse Testing 
   
   - All pages were tested for web quality using Google's Lighthouse.

@@ -271,7 +271,7 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
 
 <details><summary><b>PEP8 Online results</b></summary>
 
-- __JSHint Results__
+- __PEP8 Online Results__
 <p align="center">
   <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/pep8-results/pep8-compliance.png" >
 </p>

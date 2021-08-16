@@ -139,9 +139,6 @@ a h2:hover{
 }
 
 @media (max-width: 768px) {
-  .post h2  {
-    font-size: 2.6rem;
-  }
 
    .jumbotron {
     font-size: 1.9rem!important;

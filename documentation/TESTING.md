@@ -400,3 +400,65 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
   - Works as expected, successfuly captures and handles internal server error.
   - Go back button on error page works as expected and redirects user back to the homepage.
   
+  #### Google Lighthouse Testing 
+  
+  - All pages were tested for web quality using Google's Lighthouse.
+  
+  <details><summary><b>Click here for Lighthouse results</b></summary>
+  
+  - __Homepage__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/homepage-lighthouse.png" >
+</p>
+
+  - __Register__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/register-lighthouse.png" >
+</p>
+  
+  - __Login__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/login-lighthouse.png" >
+</p>
+
+  - __Contact__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/contact-lighthouse.png" >
+</p>
+
+  - __Profile__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/profile-lighthouse.png" >
+</p>
+
+  - __Add Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/add-post-lighthouse.png" >
+</p>
+
+  - __Edit Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/edit-post-lighthouse.png" >
+</p>
+
+  - __Blog Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/blog-post-lighthouse.png" >
+</p>
+
+  - __Admin Dashboard__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/dashboard-lighthouse.png" >
+</p>
+
+  - __Add Category__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/add-category-lighthouse.png" >
+</p>
+
+  - __Edit Category__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/lighthouse-scores/edit-category-lighthouse.png" >
+</p>
+
+  </details>

@@ -39,7 +39,7 @@ cloudinary.config(
     api_key=os.getenv('API_KEY'),
     api_secret=os.getenv('API_SECRET'))
 
-
+# Code Credit: https://slack-files.com/T0L30B202-F01KX8QUEJF-6a89867a18
 # -- Flask Mail Settings -- #
 mail_settings = {
     "MAIL_SERVER": os.environ.get('MAIL_SERVER'),
@@ -61,7 +61,9 @@ mail = Mail(app)
 # -- Create instance of PyMongo
 mongo = PyMongo(app)
 
-
+# Code Credit:
+# https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9
+# Code Credit: https://pythonhosted.org/Flask-paginate/
 # -- Set Pagination for posts per page -- #
 POSTS_PER_PAGE = 5
 

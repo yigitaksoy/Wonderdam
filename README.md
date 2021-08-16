@@ -389,10 +389,10 @@ echo web: python run.py > Procfile
 
 ### Content
 
-
+- The text content on the website were adapted from each establishments website, aloing with [Amsterdam Magazine](https://www.amsterdammagazine.com/nl/) and [I amsterdam](https://www.iamsterdam.com/en/blog)
 
 ### Media
-
+- The image content on the website were taken from each establishments own website, and social media accounts. 
 
 ### Codes
 

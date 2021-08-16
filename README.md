@@ -402,6 +402,7 @@ echo web: python run.py > Procfile
  - Code for user password input validation on Register form was taken from [Stackoverflow](https://stackoverflow.com/questions/21727317/how-to-check-confirm-password-field-in-form-without-reloading-page)
  - Code for HTML email input pattern attribute was taken from [Stackoverflow](https://stackoverflow.com/questions/5601647/html5-email-input-pattern-attribute)
  - Code for Setting up Flask Mail was taken from Karina's Flask Mail setup instructions on [Slack](https://slack-files.com/T0L30B202-F01KX8QUEJF-6a89867a18).
+ - Code used for setting up Flask Pagination were taken from [Pythonhosted](https://pythonhosted.org/Flask-paginate/), and [Mozillag](https://gist.github.com/mozillazg/69fb40067ae6d80386e10e105e6803c9)
  - Code for styling and structuring the forms were taken from [Colorlib](https://colorlib.com/etc/regform/colorlib-regform-8/)
  - Code for fitting bootstrap card images evenly was taken from [Stackoverflow](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width/53252725)
  - Code for live character count on Add/Edit Post forms were taken from [Codexworld](https://www.codexworld.com/live-character-counter-javascript/)

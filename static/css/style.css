@@ -286,7 +286,7 @@ a h2:hover{
 }
 
 .post h2 {
-  font-size: 4.2rem;
+  font-size: 4rem;
   z-index: 3;
 }
 
@@ -329,9 +329,15 @@ a h2:hover{
   margin-top: 2rem;
 }
 
+@media (max-width: 1280px) {
+  .post h2 {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .post h2 {
-    font-size: 3.2rem;
+    font-size: 2.8rem!important;
   }
 
   .post-img {
@@ -345,7 +351,7 @@ a h2:hover{
   }
 
   .post h2 {
-    font-size: 2.2rem;
+    font-size: 2.1rem!important;
   }
 
   .post-right {
@@ -376,6 +382,10 @@ a h2:hover{
   
     h2 {
       font-size: 2rem!important;
+    }
+    
+    .post h2 {
+      font-size: 2.2rem!important;
     }
 }
 

@@ -322,6 +322,7 @@ a h2:hover{
   letter-spacing: 2px;
 }
 
+/* Code Credit: https://css-tricks.com/almanac/properties/l/line-clamp/ */
 .text-clamp {
   display: -webkit-box;
   -webkit-line-clamp: 6;
@@ -380,10 +381,8 @@ a h2:hover{
     }
 }
 
+/* Code Credit: https://colorlib.com/etc/regform/colorlib-regform-8/ */
 /* Register - Login - Edit - Add Post Form */
-
-
-
 
 .signup,
 .login,
@@ -640,6 +639,7 @@ transition: color .9s ease;
   font-size: 1.25rem!important;
 }
 
+/* Code Credit: https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width/53252725 */
 .card-img-top {
   width: 100%;
   height: 15vw;

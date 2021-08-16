@@ -210,14 +210,20 @@ Please refer to seperate [README.md](https://github.com/yigitaksoy/Wonderdam/blo
   <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/add-post-validator-result.png" >
 </p>
 
-- __Blog Post__
-<p align="center">
-  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/blog-post-validator-results.png" >
-</p>
+- Preview image is added dynamically with javascript, therefore issue was ignored.
+<br>
 
 - __Edit Post__
 <p align="center">
   <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/edit-post-validator-result.png" >
+</p>
+
+- Preview image is added dynamically with javascript, therefore issue was ignored.
+<br>
+
+- __Blog Post__
+<p align="center">
+  <img src="https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/html-validator-results/blog-post-validator-results.png" >
 </p>
 
 - __Admin Dashboard__

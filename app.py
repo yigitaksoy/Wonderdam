@@ -320,7 +320,7 @@ def add_post():
                 "post_image": upload_result["url"],
                 "post_address": request.form.get("post_address"),
                 "website": request.form.get("website"),
-                "post_date": datetime.today().strftime("%d %B, %Y"),
+                "post_date": datetime.today().strftime('%d/%m/%Y'),
                 "author": session["user"]
             }
             if existing_post:

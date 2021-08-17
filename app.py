@@ -346,7 +346,11 @@ def edit_post(post_id):
         flash("Please sign in to edit this post")
         return redirect(url_for("login"))
     else:
-        if session.get('user') == 'author' or session.get('user') == ADMIN:
+
+        author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
+                                         "author": session["user"]})["author"]
+
+        if session.get('user') == author or session.get('user') == ADMIN:
             if request.method == "POST":
                 app.logger.info('in upload route')
                 cloudinary.config(
@@ -395,7 +399,10 @@ def delete_post(post_id):
         flash('Please sign in to delete your post')
         return redirect(url_for("login"))
     else:
-        if session.get('user') == 'author' or session.get('user') == ADMIN:
+        author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
+                                          "author": session["user"]})["author"]
+
+        if session.get('user') == author or session.get('user') == ADMIN:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
             flash("Post Successfully Deleted")
             return redirect(url_for("homepage"))

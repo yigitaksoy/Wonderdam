@@ -98,7 +98,7 @@ def homepage():
     are shown per page.
     """
 
-    posts = list(mongo.db.posts.find().sort("post_date", 1))
+    posts = list(mongo.db.posts.find().sort("post_date", -1))
     pagination_posts = paginate_posts(posts, POSTS_PER_PAGE)
     pagination = paginate_args(posts, POSTS_PER_PAGE)
     page_num = request.args.get('page', 1, type=int)

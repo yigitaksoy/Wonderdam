@@ -628,6 +628,7 @@ def contact():
 # Error Handlers #
 ##################
 
+# Code Credit: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 # -- 404 Error --- #
 @app.errorhandler(404)
 def page_not_found(e):

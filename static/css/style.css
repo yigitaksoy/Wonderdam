@@ -316,6 +316,10 @@ a h2:hover{
   letter-spacing: 2px;
 }
 
+.post .form-submit:hover {
+  border: 1px solid var(--hover);
+}
+
 /* Code Credit: https://css-tricks.com/almanac/properties/l/line-clamp/ */
 .text-clamp {
   display: -webkit-box;
@@ -369,8 +373,11 @@ a h2:hover{
 
     .post .content {
       margin-top: 0!important;
-      margin-bottom: 3rem!important;
       padding-top: 0!important;
+    }
+
+    .post .py-5{
+      padding-bottom: 1rem!important;
     }
 
     .post-img {
@@ -382,7 +389,7 @@ a h2:hover{
     }
     
     .post h2 {
-      font-size: 2.2rem!important;
+      font-size: 2.5rem!important;
     }
 }
 

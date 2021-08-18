@@ -406,6 +406,7 @@ echo web: python run.py > Procfile
  - Code for styling and structuring the forms were taken from [Colorlib](https://colorlib.com/etc/regform/colorlib-regform-8/)
  - Code for fitting bootstrap card images evenly was taken from [Stackoverflow](https://stackoverflow.com/questions/37287153/how-to-get-images-in-bootstraps-card-to-be-the-same-height-width/53252725)
  - Code for live character count on Add/Edit Post forms were taken from [Codexworld](https://www.codexworld.com/live-character-counter-javascript/)
+ - Code for handeling errors on Flask was taken from [Palletsprojects](https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/)
 
 
 ## Acknowledgements

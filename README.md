@@ -416,7 +416,10 @@ echo web: python run.py > Procfile
 - All content on the website, including images and text, are used for educational purposes only.
 
 ## Miscellaneous
+
 - During the early development stages of the project, delete modal title was updated on User Profile page, but due to long hours of coding this commit was mis-stated as "Update delete modal title on post page" which was meant for Profile Page. [See commit](https://github.com/yigitaksoy/Wonderdam/commit/a0547907ea744e8d0e4447f9a7611a32a2c425dd)
+
+- During the early development stages of this project, Admin user functionality was borrowed from a fellow student at Code Institute [Franciskadtt](https://github.com/Franciskadtt/the-growth-club) along with 3 lines of comments as a placeholder, but later on this function was updated, and implementations were left out. [See commit](https://github.com/yigitaksoy/Wonderdam/commit/859b95a2ee8cf87e2294e1eb0804667ca7892b80)
 
 - During the final development stages of the project, `datetime` format for `post_date` value was updated. During the committing process IDE gave an error related to an extension called [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens), and due this malfunctioning 2 seperate commits with the same name, but with different changes were added, which was meant to be a single commit. [See commit-1](https://github.com/yigitaksoy/Wonderdam/commit/3e7535aaa859ca28c24152ceda7d921377d16575), [See commit-2](https://github.com/yigitaksoy/Wonderdam/commit/475f63afa671bf8d88851cd91c343b26a0b9cb9e)
 

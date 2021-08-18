@@ -639,9 +639,9 @@ def page_not_found(e):
 
 # -- 500 Error --- #
 @app.errorhandler(500)
-def server_not_found(e):
+def internal_server_error(e):
     """
-    Server Not Found error, Renders a 500 error page.
+    Internal Server Error, Renders a 500 error page.
     """
     return render_template("500.html"), 500
 
@@ -649,4 +649,4 @@ def server_not_found(e):
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

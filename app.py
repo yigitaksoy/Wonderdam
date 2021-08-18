@@ -19,9 +19,10 @@ if os.path.exists("env.py"):
 
 load_dotenv()
 
-
+# Create instance of Flask
 app = Flask(__name__)
 
+# Enable CORS to make requests
 CORS(app)
 
 # -- MongoDB Settings -- #
@@ -174,6 +175,7 @@ def register():
             # Put the new user into 'session' cookie
             session["user"] = request.form.get("username").lower()
             flash("Registration Successful!")
+            # Redirect user to their Profile page
             return redirect(url_for("profile", username=session["user"]))
         else:
             flash("Passwords do not match!", "error")
@@ -240,7 +242,7 @@ def profile(username):
         else:
             flash('You cant see other users profile')
             return redirect(url_for("homepage"))
-        # Render user profile page
+        # Render user profile page with all their current posts
         return render_template("profile.html", username=username, posts=posts)
 
 
@@ -252,17 +254,19 @@ def delete_account(username):
     if they are, then user is removed from the database,
     and session cookies are removed.
     """
-
+    # Check if user is in session
     if session.get('user') is None:
         flash("You need to sign in to delete your account")
         return redirect(url_for("login"))
     else:
+        # Check if username matches the session user
         if session["user"] == username:
             mongo.db.users.remove({"username": username})
             flash("User Successfully Deleted")
             session.pop("user")
             return redirect(url_for("homepage"))
         else:
+            # If session user doesnt match current user, restrict deletion
             flash("You can't delete other users accounts!")
             return redirect(url_for("homepage"))
 
@@ -291,7 +295,7 @@ def add_post():
     image file is uploaded to cloudinary, and user is informed with a
     flash message.
     """
-
+    # Check if user in session
     if session.get('user') is None:
         flash("Please sign in to post")
         return redirect(url_for("login"))
@@ -308,7 +312,7 @@ def add_post():
             upload_result = None
             file_to_upload = request.files['post_image']
             app.logger.info('%s file_to_upload', file_to_upload)
-
+            # Upload image to Cloudinary
             if file_to_upload:
                 upload_result = cloudinary.uploader.upload(file_to_upload)
                 app.logger.info(upload_result)
@@ -338,18 +342,18 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     """
-    Edit post, checks if user is signed in, if they are gets
-    all the current post data from the databse for post author,
-    and updates the post data.
+    Edit post, checks if user is signed in, if they are, checks if
+    session is the post author, then gets all the current post data from
+    the databse for post author, and updates the post data.
     """
+    # Check if user in session
     if session.get('user') is None:
         flash("Please sign in to edit this post")
         return redirect(url_for("login"))
     else:
-
         author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
                                          "author": session["user"]})["author"]
-
+        # Check if the session user is the post author or Admin
         if session.get('user') == author or session.get('user') == ADMIN:
             if request.method == "POST":
                 app.logger.info('in upload route')
@@ -360,6 +364,7 @@ def edit_post(post_id):
                 upload_result = None
                 file_to_upload = request.files['post_image']
                 app.logger.info('%s file_to_upload', file_to_upload)
+                # Upload image to Cloudinary
                 if file_to_upload:
                     upload_result = cloudinary.uploader.upload(file_to_upload)
                     app.logger.info(upload_result)
@@ -401,7 +406,7 @@ def delete_post(post_id):
     else:
         author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
                                           "author": session["user"]})["author"]
-
+        # Check if the session user is the post author or Admin
         if session.get('user') == author or session.get('user') == ADMIN:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
             flash("Post Successfully Deleted")
@@ -426,7 +431,7 @@ def add_category():
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
-        # Allow admin user to add new categories
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             if request.method == "POST":
                 # Check if category already exists in db
@@ -461,7 +466,7 @@ def delete_category(category_id):
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
-        # Allow admin user to delete categories
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             mongo.db.categories.remove({"_id": ObjectId(category_id)})
             flash("Category deleted")
@@ -488,7 +493,7 @@ def edit_category(category_id):
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
-        # Allow admin user to edit categories
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             if request.method == "POST":
                 submit = {
@@ -515,9 +520,9 @@ def dashboard():
     """
     Admin Dashboard, stricted for Admin use only. Gets
     all the blog data from the database including number of
-    registered users and its data, all the category information,
+    registered users, and its data, all the category information,
     along with all the user data to review. Allows admin user to
-    edit, delete all categories, and posts, and users from the
+    edit, delete all categories, posts, and users from the
     database.
     """
 
@@ -526,6 +531,7 @@ def dashboard():
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             categories = list(mongo.db.categories.find().sort(
                 "post_category", 1))
@@ -549,8 +555,9 @@ def dashboard():
 def delete_user(user_id):
     """
     Delete Registered users, stricted for Admin use
-    only. Allows admin user to delete specific user from
-    the database.
+    only. Checks if user in session, and checks if
+    session user is admin. Allows admin user to
+    delete specific user from the database.
     """
 
     # Check if user is signed in
@@ -558,6 +565,7 @@ def delete_user(user_id):
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             mongo.db.users.remove({"_id": ObjectId(user_id)})
             flash("User Successfully Deleted")
@@ -575,11 +583,12 @@ def delete_user_post(post_id):
     Delete user post, stricted for Admin use only. Allows
     admin user to delete any post data located in the database.
     """
-
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
     else:
+        # Check if session user is Admin
         if session['user'] == ADMIN:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})
             flash("Post Successfully Deleted")
@@ -632,7 +641,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def server_not_found(e):
     """
-    Server Not Found error, Renders a 505 error page.
+    Server Not Found error, Renders a 500 error page.
     """
     return render_template("500.html"), 500
 

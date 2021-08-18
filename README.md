@@ -110,7 +110,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ### Imagery
 
-
+- Images on the website were chosen to set the sense of quality, and taste of the blog, and to make sure users have a good experience during their visit.
 
 ### Wireframes
 

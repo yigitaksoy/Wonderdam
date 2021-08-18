@@ -424,6 +424,8 @@ if session.get('user') is None:
   
   - Tested restrictions against users adding a post without signing in -  **Restricted Access / PASS**
   - Tested restrictions against users editing a post without signing in -  **Restricted Access / PASS**
+  - Tested restrictions against users trying to edit other users' posts - **Restricted Access / PASS**
+  - Tested restrictions against users trying to delete other users' posts - **Restricted Access / PASS**
   - Tested restrictions against users seeing other users Profiles without signing-in - **Restricted Access / PASS**
   - Tested restrictions against users seeing other users Profiles when signed-in - **Restricted Access / PASS**
   - Tested restrictions against users deleting other users' accounts - **Restricted Access / PASS**

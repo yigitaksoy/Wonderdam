@@ -290,6 +290,9 @@ meta tag was added into the base template, and issue was resolved. [Please see c
 ```console
 if session.get('user') is None:
 ```
+
+- During the testing stages of the Project, a small bug related to input validation was discovered on Add Post, and Edit Post forms. This bug was occuring for `Post Title` and `Post Content` inputs which were validating the input, but not showing the validation error messages on Google Chrome. After further testing I've realized that the issue wasn't occuring all the time, and was working fine on other browsers. Validation messages were also shown on mouse hover, and since form validation was working properly, this bug was ignored.
+
 ### Further Manual Testing
 
 #### Responsive Design - PASS

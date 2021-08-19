@@ -223,7 +223,7 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    User profile, checks if user is signed in, if they are,
+    User profile, checks if user is in session, if they are,
     user's username is requested from database, and profile
     page with user's posts are rendered.
     """
@@ -400,7 +400,7 @@ def delete_post(post_id):
     if they are, post data is removed from the database, and a
     confirmation message is shown to the author.
     """
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in to delete your post')
         return redirect(url_for("login"))
@@ -428,7 +428,7 @@ def add_category():
     database.
     """
 
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
@@ -463,7 +463,7 @@ def delete_category(category_id):
     If they do, selected category is removed from the database.
     """
 
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
@@ -490,7 +490,7 @@ def edit_category(category_id):
     submission. Success message is shown to the Admin.
     """
 
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
@@ -534,7 +534,7 @@ def dashboard():
     Delete all the categories, posts, and users.
     """
 
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))

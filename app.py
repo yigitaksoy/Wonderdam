@@ -351,8 +351,8 @@ def edit_post(post_id):
         flash("Please sign in to edit this post")
         return redirect(url_for("login"))
     else:
-        author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
-                                         "author": session["user"]})["author"]
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        author = post["author"]
         # Check if the session user is the post author or Admin
         if session.get('user') == author or session.get('user') == ADMIN:
             if request.method == "POST":
@@ -404,8 +404,8 @@ def delete_post(post_id):
         flash('Please sign in to delete your post')
         return redirect(url_for("login"))
     else:
-        author = mongo.db.posts.find_one({"_id": ObjectId(post_id),
-                                          "author": session["user"]})["author"]
+        post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
+        author = post["author"]
         # Check if the session user is the post author or Admin
         if session.get('user') == author or session.get('user') == ADMIN:
             mongo.db.posts.remove({"_id": ObjectId(post_id)})

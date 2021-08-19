@@ -381,6 +381,7 @@ def edit_post(post_id):
                 }
                 mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
                 flash("Post Successfully Updated")
+                return redirect(url_for("homepage"))
             post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
             categories = mongo.db.categories.find().sort("post_category", 1)
             return render_template("edit_post.html", post=post,

@@ -95,8 +95,8 @@ def paginate_args(posts, per_page):
 def homepage():
     """
     Gets all post data from the database, and renders
-    into Homepage template. Using the pagination only 5 posts
-    are shown per page.
+    into Homepage template. Using the pagination only
+    5 posts are shown per page.
     """
 
     posts = list(mongo.db.posts.find().sort("post_date", -1))
@@ -126,7 +126,7 @@ def search():
     """
     Search function, searches the query and presents the data
     into the template with Pagination. Users are able to search
-    for all categories, posts specific to user, and all the posts.
+    for all categories, posts by user, and all the posts.
     """
     query = request.form.get("query")
     posts = list(mongo.db.posts.find({"$text": {"$search": query}}))
@@ -144,8 +144,8 @@ def search():
 def register():
     """
     Searches the database if user already exists,
-    if not user is added into the dictionary and redirected
-    to their own profile page.
+    if not user is added into the dictionary and
+    redirected to their own profile page.
     """
     if request.method == "POST":
         # Check if username already exists in db
@@ -189,8 +189,8 @@ def login():
     """
     Login function, checks if user exits in the database,
     and checks if the password mathces the user input. If not,
-    user is redirected to the login page. If user doesnt exits
-    a flash message is shown and user get redirected.
+    user is redirected to the login page. If user doesnt exit
+    a flash message is shown. and user gets redirected.
     """
     if request.method == "POST":
         # Check if username exists in db
@@ -223,11 +223,11 @@ def login():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     """
-    User profile, checks if user is signed in, if not user's
-    username is requested from database and profile page with
-    users own posts is rendered.
+    User profile, checks if user is signed in, if they are,
+    user's username is requested from database, and profile
+    page with user's posts are rendered.
     """
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in to see your Profile Page')
         return redirect(url_for("login"))
@@ -250,7 +250,7 @@ def profile(username):
 @app.route("/delete_account/<username>")
 def delete_account(username):
     """
-    Delete Account, checks if user is signed in,
+    Delete Account, checks if user is in session,
     if they are, then user is removed from the database,
     and session cookies are removed.
     """
@@ -289,7 +289,7 @@ def logout():
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
     """
-    Add post, checks if user is signed in before posting,
+    Add post, checks if user is in session before posting,
     if they are, checks if the current post title already exists
     in the database, if not then post is added into the database,
     image file is uploaded to cloudinary, and user is informed with a
@@ -342,9 +342,9 @@ def add_post():
 @app.route("/edit_post/<post_id>", methods=["GET", "POST"])
 def edit_post(post_id):
     """
-    Edit post, checks if user is signed in, if they are, checks if
-    session is the post author, then gets all the current post data from
-    the databse for post author, and updates the post data.
+    Edit post, checks if user is in session, if they are, checks if
+    session user is the post author, or Admin user, then gets all the
+    current post data from the databse, and updates the post data.
     """
     # Check if user in session
     if session.get('user') is None:
@@ -395,10 +395,10 @@ def edit_post(post_id):
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     """
-    Delete post, checks if user is signed in, then checks
-    if user is the author of that specific post, if they are
-    post data is removed from the database, and a confirmation
-    message is shown to the author.
+    Delete post, checks if user is in session, then checks
+    if user is the author of that specific post, or Admin user.
+    if they are, post data is removed from the database, and a
+    confirmation message is shown to the author.
     """
     # Check if user is signed in
     if session.get('user') is None:
@@ -421,10 +421,11 @@ def delete_post(post_id):
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     """
-    Add category, stricted only for Admin use. Checks if the user
-    is signed in, if they are checks if the current user has admin
-    credentials. If the user has admin credentials, checks if the current
-    category already exits, if not, category is added into the database.
+    Add category, stricted for Admin use only. Checks if
+    the user is in session, and has Admin credentials.
+    If the user has Admin credentials, checks if the current
+    category already exits, if not,category is added into the
+    database.
     """
 
     # Check if user is signed in
@@ -457,9 +458,9 @@ def add_category():
 @app.route("/delete_category/<category_id>")
 def delete_category(category_id):
     """
-    Delete Category, stricted only for Admin use.
-    Checks if user is signed in and has admin credentials.
-    If they do selected category is removed from the database.
+    Delete Category, stricted for Admin use only.
+    Checks if user is in session, and has Admin credentials.
+    If they do, selected category is removed from the database.
     """
 
     # Check if user is signed in
@@ -483,10 +484,10 @@ def delete_category(category_id):
 @app.route("/edit_category/<category_id>", methods=["GET", "POST"])
 def edit_category(category_id):
     """
-    Edit Category, restricted for only Admin use. Checks if user is
-    signed in, and has admin credentials. If they do, the selected
-    category data is retrieved from the database, and updated after submission.
-    Success message is shown to the Admin.
+    Edit Category, restricted for Admin use only. Checks if user is
+    in session, and has Admin credentials. If they do, the selected
+    category data is retrieved from the database, and updated after
+    submission. Success message is shown to the Admin.
     """
 
     # Check if user is signed in
@@ -519,12 +520,10 @@ def edit_category(category_id):
 @app.route("/dashboard")
 def dashboard():
     """
-    Admin Dashboard, stricted for Admin use only. Gets
-    all the blog data from the database including number of
-    registered users, and its data, all the category information,
-    along with all the user data to review. Allows admin user to
-    edit, delete all categories, posts, and users from the
-    database.
+    Admin Dashboard, stricted for Admin use only. Checks is user
+    is in session, and has Admin credentials. Gathers all the blog
+    data from the database. Allows Admin user to Add, Update, and
+    Delete all the categories, posts, and users.
     """
 
     # Check if user is signed in
@@ -555,13 +554,13 @@ def dashboard():
 @app.route("/delete_user/<user_id>")
 def delete_user(user_id):
     """
-    Delete Registered users, stricted for Admin use
-    only. Checks if user in session, and checks if
-    session user is admin. Allows admin user to
-    delete specific user from the database.
+    Delete Registered users, stricted for Admin use only.
+    Checks if user in session, and checks if session user
+    is Admin. Allows Admin user to delete users from the
+    database.
     """
 
-    # Check if user is signed in
+    # Check if user is in session
     if session.get('user') is None:
         flash('Please sign in as Admin User to perform this action')
         return redirect(url_for("login"))
@@ -582,7 +581,7 @@ def delete_user(user_id):
 def delete_user_post(post_id):
     """
     Delete user post, stricted for Admin use only. Allows
-    admin user to delete any post data located in the database.
+    Admin user to delete any user post data located in the database.
     """
     # Check if user is in session
     if session.get('user') is None:
@@ -634,7 +633,7 @@ def contact():
 @app.errorhandler(404)
 def page_not_found(e):
     """
-    Page Not Found error, Renders a 404 error page.
+    Page Not Found error, Renders 404 error template.
     """
     return render_template("404.html"), 404
 
@@ -643,7 +642,7 @@ def page_not_found(e):
 @app.errorhandler(500)
 def internal_server_error(e):
     """
-    Internal Server Error, Renders a 500 error page.
+    Internal Server Error, Renders 500 error template.
     """
     return render_template("500.html"), 500
 

@@ -235,6 +235,8 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 - Comments functionality allowing users to comment on the posts.
 - User profile picture functionality, allowing users to add profile pictures, and show them next to their posts, and comments.
 - Email notification functionality for Admin user to be alerted when a new post is added to the blog.
+- Functionality for automatically assigning new tag colors for new categories. 
+- Extra layer of security for server-side file validation before uploading images.
 
 ## Technologies Used
 

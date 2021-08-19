@@ -498,6 +498,14 @@ def edit_category(category_id):
         # Check if session user is Admin
         if session['user'] == ADMIN:
             if request.method == "POST":
+                # Check if category already exists in db
+                existing_category = mongo.db.categories.find_one({
+                    "post_category": request.form.get("post_category")})
+                category = {
+                    "post_category": request.form.get("post_category")}
+                if existing_category:
+                    flash("Category already exists")
+                    return render_template("add_category.html")
                 submit = {
                     "post_category": request.form.get("post_category")
                 }

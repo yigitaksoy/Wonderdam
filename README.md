@@ -288,7 +288,7 @@ There are three Adobe fonts used throught the website. [P22 Pooper Black](https:
 
 ## Testing
 
-Testing information can be found in seperate a [TESTING.md](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/TESTING.md) file.
+Testing information can be found in seperate [TESTING.md](https://github.com/yigitaksoy/Wonderdam/blob/master/documentation/TESTING.md) file.
 
 ## Database
 

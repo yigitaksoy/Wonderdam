@@ -715,6 +715,10 @@ transition: color .9s ease;
   #dashboard h2 {
     font-size: 3rem!important;
   }
+  
+  #dashboard .card-title .h4 {
+    font-size: 1rem!important;
+  }
 
 }
 

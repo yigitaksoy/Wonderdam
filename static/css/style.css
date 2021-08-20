@@ -684,6 +684,7 @@ transition: color .9s ease;
 
 .card .card-block {
   padding: 1rem;
+  border: 2px solid var(--nightlife)
 }
 
 #dashboard .form-submit:hover {

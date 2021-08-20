@@ -9,6 +9,7 @@ from flask_pymongo import PyMongo
 from flask_mail import Mail, Message
 from flask_paginate import Pagination
 from flask_cors import CORS
+from flask_sslify import SSLify
 from dotenv import load_dotenv
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -21,6 +22,7 @@ load_dotenv()
 
 # Create instance of Flask
 app = Flask(__name__)
+sslify = SSLify(app)
 
 # Enable CORS to make requests
 CORS(app)
@@ -658,4 +660,4 @@ def internal_server_error(e):
 if __name__ == '__main__':
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

@@ -154,7 +154,7 @@ def register():
         )
 
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists!")
             return redirect(url_for("register"))
 
         password = request.form.get("password")
@@ -202,7 +202,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                         session["user"] = request.form.get("username").lower()
-                        flash("Welcome, {}".format(
+                        flash("Welcome Back, {}".format(
                             request.form.get("username")))
                         return redirect(url_for(
                             "profile", username=session["user"]))
@@ -213,7 +213,7 @@ def login():
 
         else:
             # Username doesn't exist
-            flash("Username doesn't exist")
+            flash("Username doesn't exist!")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -229,7 +229,7 @@ def profile(username):
     """
     # Check if user is in session
     if session.get('user') is None:
-        flash('Please sign in to see your Profile Page')
+        flash('Please sign in to see your Profile')
         return redirect(url_for("login"))
     else:
         if session["user"] == username:
@@ -240,7 +240,7 @@ def profile(username):
             posts = list(mongo.db.posts.find(
                 {"author": session["user"]}).sort("post_date", 1))
         else:
-            flash('You cant see other users profile')
+            flash('You cant see other users Profile')
             return redirect(url_for("homepage"))
         # Render user profile page with all their current posts
         return render_template("profile.html", username=username, posts=posts)
@@ -328,7 +328,7 @@ def add_post():
                 "author": session["user"]
             }
             if existing_post:
-                flash("Post already exists")
+                flash("Post already exists!")
                 return redirect(url_for("add_post"))
             mongo.db.posts.insert_one(post)
             flash("You've successfully posted!")
@@ -413,7 +413,7 @@ def delete_post(post_id):
             flash("Post Successfully Deleted")
             return redirect(url_for("homepage"))
         else:
-            flash("You cant delete other users posts!")
+            flash("You cant delete other users Posts!")
             return redirect(url_for("homepage"))
 
 
@@ -450,7 +450,7 @@ def add_category():
                     return redirect(url_for("dashboard"))
             return render_template("add_category.html")
         else:
-            flash('You are not authorized to perform this operation')
+            flash('You are not authorized to perform this operation!')
             return redirect(url_for("homepage"))
 
 
@@ -474,7 +474,7 @@ def delete_category(category_id):
             flash("Category deleted")
 
         else:
-            flash('You are not authorized to perform this operation')
+            flash('You are not authorized to perform this operation!')
             return redirect(url_for("homepage"))
 
         return redirect(url_for("dashboard"))
@@ -504,7 +504,7 @@ def edit_category(category_id):
                 category = {
                     "post_category": request.form.get("post_category")}
                 if existing_category:
-                    flash("Category already exists")
+                    flash("Category already exists!")
                     return render_template("add_category.html")
                 submit = {
                     "post_category": request.form.get("post_category")
@@ -520,7 +520,7 @@ def edit_category(category_id):
             return render_template("edit_category.html", category=category)
 
         else:
-            flash('You are not authorized to perform this operation')
+            flash('You are not authorized to perform this operation!')
             return redirect(url_for("homepage"))
 
 
@@ -549,7 +549,7 @@ def dashboard():
             posts = list(mongo.db.posts.find().sort("post_date", -1))
             total_posts = mongo.db.posts.count()
         else:
-            flash('You are not authorized to perform this operation')
+            flash('You are not authorized to perform this operation!')
             return redirect(url_for("homepage"))
 
         return render_template("dashboard.html", categories=categories,
